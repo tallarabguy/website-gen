@@ -28,73 +28,157 @@
 <body>
     <div class="reveal">
         <div class="slides">
+            <!-- Slide 1: Welcome -->
             <section>
                 <h1>Welcome to IG12</h1>
                 <p>Innovating for our community.</p>
             </section>
+
+            <!-- Slide 2: Folium Map -->
             <section>
                 <h2>Mapping Community Groups</h2>
-                <iframe src="map.html" width="800" height="500" style="border:none;"></iframe>
+                <iframe src="map.html" width="800" height="500" style="border:none;" id="folium-map"></iframe>
             </section>
-            <section>
-                <h2>3D Cluster Animation</h2>
-                <video width="800" height="500" controls>
-                    <source src="3d_clusters.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </section>
-            <section>
-                <h2>Network Configuration</h2>
-                <div id="network" style="width:800px; height:500px;"></div>
-                <script src="https://d3js.org/d3.v7.min.js"></script>
-                <script>
-                    d3.json("network_data.json").then(function(data) {
-                        console.log(data);
-                        const width = 800, height = 500;
 
-                        const svg = d3.select("#network")
-                                      .append("svg")
-                                      .attr("width", width)
-                                      .attr("height", height);
-
-                        const simulation = d3.forceSimulation(data.nodes)
-                            .force("link", d3.forceLink(data.links).id(d => d.id).distance(50))
-                            .force("charge", d3.forceManyBody().strength(-100))
-                            .force("center", d3.forceCenter(width / 2, height / 2));
-
-                        const link = svg.append("g")
-                            .selectAll("line")
-                            .data(data.links)
-                            .enter().append("line")
-                            .attr("stroke", "#999")
-                            .attr("stroke-opacity", 0.6)
-                            .attr("stroke-width", 1);
-
-                        const node = svg.append("g")
-                            .selectAll("circle")
-                            .data(data.nodes)
-                            .enter().append("circle")
-                            .attr("r", 5)
-                            .attr("fill", "#69b3a2");
-
-                        simulation.on("tick", () => {
-                            link.attr("x1", d => d.source.x)
-                                .attr("y1", d => d.source.y)
-                                .attr("x2", d => d.target.x)
-                                .attr("y2", d => d.target.y);
-
-                            node.attr("cx", d => d.x)
-                                .attr("cy", d => d.y);
-                        });
-                    }).catch(function(err) {
-                        console.error("Error loading network data:", err);
-                    });
-                </script>
+            <!-- Slide 3: Network Representation -->
+            <section id="network-slide" style="display: none;">
+                <h2>Network Representation</h2>
+                <div id="network-container" style="width:800px; height:500px;"></div>
             </section>
         </div>
     </div>
+
+    <!-- Include Reveal.js -->
     <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
     <script>Reveal.initialize();</script>
+
+    <!-- Include D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Network Animation Script -->
+    <script>
+        const clusters = [
+            { id: 0, color: '#FF5733' },
+            { id: 1, color: '#33FF57' },
+            { id: 2, color: '#3357FF' },
+        ];
+
+        function transitionToNetwork() {
+            // Hide Folium map and show network slide
+            document.getElementById('folium-map').style.display = 'none';
+            document.getElementById('network-slide').style.display = 'block';
+
+            // Create an SVG for the network
+            const width = 800, height = 500;
+            const svg = d3.select('#network-container')
+                          .append('svg')
+                          .attr('width', width)
+                          .attr('height', height);
+
+            // Step 1: Create nodes (initial positions from map)
+            const nodes = [
+                { id: 'A', cluster: 0, x: 300, y: 250 },
+                { id: 'B', cluster: 0, x: 310, y: 260 },
+                { id: 'C', cluster: 1, x: 400, y: 300 },
+                { id: 'D', cluster: 1, x: 420, y: 310 },
+                { id: 'E', cluster: 2, x: 500, y: 400 },
+            ];
+
+            // Step 2: Create links
+            const links = [
+                { source: 'A', target: 'B' },
+                { source: 'C', target: 'D' },
+                { source: 'E', target: 'C' },
+            ];
+
+            const simulation = d3.forceSimulation(nodes)
+                .force('link', d3.forceLink(links).id(d => d.id))
+                .force('charge', d3.forceManyBody().strength(-30))
+                .force('center', d3.forceCenter(width / 2, height / 2))
+                .on('tick', ticked);
+
+            // Draw links
+            const link = svg.append('g')
+                .attr('class', 'links')
+                .selectAll('line')
+                .data(links)
+                .enter()
+                .append('line')
+                .attr('stroke', '#999')
+                .attr('stroke-width', 2);
+
+            // Draw nodes
+            const node = svg.append('g')
+                .attr('class', 'nodes')
+                .selectAll('circle')
+                .data(nodes)
+                .enter()
+                .append('circle')
+                .attr('r', 10)
+                .attr('fill', d => clusters[d.cluster].color);
+
+            // Animation tick updates
+            function ticked() {
+                link.attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y);
+
+                node.attr('cx', d => d.x)
+                    .attr('cy', d => d.y);
+            }
+
+            // Step 3: Radial Diffusion Animation
+            setTimeout(() => {
+                simulation.stop();
+                node.transition()
+                    .duration(2000)
+                    .attr('cx', d => d.cluster === 0 ? 200 : d.cluster === 1 ? 400 : 600)
+                    .attr('cy', d => d.cluster === 0 ? 100 : d.cluster === 1 ? 300 : 500);
+            }, 2000);
+
+            // Step 4: Animate Information Flow
+            setTimeout(() => {
+                const flowCircle = svg.append('circle')
+                    .attr('cx', 200)
+                    .attr('cy', 100)
+                    .attr('r', 5)
+                    .attr('fill', 'white');
+
+                // Animate flow
+                flowCircle.transition()
+                    .duration(3000)
+                    .attr('cx', 400)
+                    .attr('cy', 300)
+                    .on('end', () => flowCircle.remove());
+            }, 4000);
+
+            // Step 5: Add Question Mark and Logo Transition
+            setTimeout(() => {
+                svg.append('text')
+                    .attr('x', width / 2)
+                    .attr('y', height / 2)
+                    .attr('text-anchor', 'middle')
+                    .attr('font-size', 50)
+                    .attr('fill', 'white')
+                    .text('?')
+                    .transition()
+                    .duration(2000)
+                    .attr('font-size', 0)
+                    .remove();
+
+                svg.append('image')
+                    .attr('x', width / 2 - 50)
+                    .attr('y', height / 2 - 50)
+                    .attr('width', 100)
+                    .attr('height', 100)
+                    .attr('xlink:href', 'logo.png');
+            }, 6000);
+        }
+
+        // Trigger the transition after a delay
+        setTimeout(transitionToNetwork, 3000);
+    </script>
 </body>
 </html>
 
