@@ -168,6 +168,21 @@
         waitForMapState()
             .then((mapState) => {
                 console.log("Successfully received map state:", mapState);
+
+      // Fetch and process network data when the slide changes
+      Reveal.on('slidechanged', function (event) {
+          const currentSlide = event.currentSlide;
+
+          // Check if the current slide is the network visualization slide
+          if (currentSlide.querySelector("#network-container")) {
+              console.log("Network visualization slide active.");
+
+              // Ensure mapState is available
+              if (!mapState) {
+                  console.error("Map state is not available. Waiting for map.html to send it.");
+                  return;
+              }
+    
                 // Proceed with using mapState
                 fetch("network_data.json")
                     .then(response => response.json())
@@ -187,9 +202,9 @@
                         drawNetwork(networkData);
                     })
                     .catch(error => console.error("Error loading network data:", error));
-            })
-            .catch((error) => {
-                console.error(error.message);
+              })
+              .catch((error) => {
+                  console.error(error.message);
             });
     </script>
 
