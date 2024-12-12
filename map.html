@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_1114301963e0e08e8c2fa888979e85b3 {
+                #map_22c3e4b6ced26920595da56a90c81136 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -74,6 +74,12 @@
             mapState.center = map.getCenter();
             mapState.zoom = map.getZoom();
             console.log("Updated map state:", mapState);
+
+            // Send the map state to the parent
+            window.parent.postMessage({
+                type: "MAP_STATE",
+                state: mapState
+            }, "*");
         }
 
         map.on("moveend", updateMapState);
@@ -90,14 +96,14 @@
     });
 </script>
     
-            <div class="folium-map" id="map_1114301963e0e08e8c2fa888979e85b3" ></div>
+            <div class="folium-map" id="map_22c3e4b6ced26920595da56a90c81136" ></div>
         
 </body>
 <script>
     
     
-            var map_1114301963e0e08e8c2fa888979e85b3 = L.map(
-                "map_1114301963e0e08e8c2fa888979e85b3",
+            var map_22c3e4b6ced26920595da56a90c81136 = L.map(
+                "map_22c3e4b6ced26920595da56a90c81136",
                 {
                     center: [51.54647221693442, 0.09818596515910524],
                     crs: L.CRS.EPSG3857,
@@ -111,13 +117,13 @@
 
         
     
-            var tile_layer_bf155b26b439b268ca5e35867377bf16 = L.tileLayer(
+            var tile_layer_a97b7e8c39b330bd950613d8d3d00d8e = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
         
     
-            tile_layer_bf155b26b439b268ca5e35867377bf16.addTo(map_1114301963e0e08e8c2fa888979e85b3);
+            tile_layer_a97b7e8c39b330bd950613d8d3d00d8e.addTo(map_22c3e4b6ced26920595da56a90c81136);
         
 </script>
 </html>
