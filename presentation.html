@@ -24,31 +24,6 @@
     <script>
         let mapState = null; // Global variable to hold the map state
 
-
-        function waitForMapState() {
-            return new Promise((resolve, reject) => {
-                // Add event listener for message from iframe
-                window.addEventListener("message", function messageListener(event) {
-                    // Check if the message contains the map state
-                    if (event.data && event.data.type === "MAP_STATE") {
-                        mapState = event.data.state;
-                        console.log("Received map state from iframe:", mapState);
-
-                        // Remove the listener after receiving the state
-                        window.removeEventListener("message", messageListener);
-                        resolve(mapState);
-                    }
-                });
-
-        // Function to get the map state
-        function getMapState() {
-            if (mapState) {
-                return mapState;
-            } else {
-                console.error("Map state not yet received from iframe.");
-                return null;
-            }
-        }
     </script>
 </head>
 <body>
@@ -139,6 +114,30 @@
             }, 3000);
         }
 
+        function waitForMapState() {
+            return new Promise((resolve, reject) => {
+                // Add event listener for message from iframe
+                window.addEventListener("message", function messageListener(event) {
+                    // Check if the message contains the map state
+                    if (event.data && event.data.type === "MAP_STATE") {
+                        mapState = event.data.state;
+                        console.log("Received map state from iframe:", mapState);
+
+                        // Remove the listener after receiving the state
+                        window.removeEventListener("message", messageListener);
+                        resolve(mapState);
+                    }
+                });
+
+        // Function to get the map state
+        function getMapState() {
+            if (mapState) {
+                return mapState;
+            } else {
+                console.error("Map state not yet received from iframe.");
+                return null;
+            }
+        }
 
         // Fetch and process network data
         waitForMapState()
