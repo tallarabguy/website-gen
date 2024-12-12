@@ -6,27 +6,36 @@
     <title>Community Presentation</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* Custom styles */
-        body { background-color: #1E3A5F; color: #FFFFFF; font-family: Arial, sans-serif; }
+        body {
+            background-color: #1E3A5F;
+            color: #FFFFFF;
+            font-family: 'Poppins', Arial, sans-serif;
+            font-weight: 300;
+        }
+        h1, h2 {
+            font-family: 'Poppins', Arial, sans-serif;
+            font-weight: 600;
+        }
+        p {
+            font-family: 'Poppins', Arial, sans-serif;
+            font-weight: 400;
+        }
     </style>
 </head>
 <body>
     <div class="reveal">
         <div class="slides">
-            <!-- Slide 1: Welcome -->
             <section>
                 <h1>Welcome to IG12</h1>
                 <p>Innovating for our community.</p>
             </section>
-            
-            <!-- Slide 2: Base Map -->
             <section>
                 <h2>Mapping Community Groups</h2>
                 <iframe src="map.html" width="800" height="500" style="border:none;"></iframe>
             </section>
-
-            <!-- Slide 3: 3D Cluster Animation -->
             <section>
                 <h2>3D Cluster Animation</h2>
                 <video width="800" height="500" controls>
@@ -34,8 +43,6 @@
                     Your browser does not support the video tag.
                 </video>
             </section>
-
-            <!-- Slide 4: Network Configuration -->
             <section>
                 <h2>Network Configuration</h2>
                 <div id="network" style="width:800px; height:500px;"></div>
@@ -90,3 +97,4 @@
     <script>Reveal.initialize();</script>
 </body>
 </html>
+
