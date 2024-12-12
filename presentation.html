@@ -29,6 +29,7 @@
                 <iframe src="map.html" width="800" height="500" style="border:none;" id="folium-map"></iframe>
             </section>
 
+
             <!-- Slide 2: Network Visualization -->
             <section>
                 <h2>Network Representation</h2>
@@ -38,6 +39,17 @@
     </div>
 
     <script>
+        
+        // Wait for the iframe to load and then fetch the map state
+        document.getElementById('folium-map').addEventListener('load', function () {
+            try {
+                const mapState = window.parent.getMapState();
+                console.log('Map state:', mapState);
+            } catch (error) {
+                console.error('Error fetching map state:', error);
+            }
+        });
+
         // Function to transform latitude/longitude to screen coordinates
         function latLonToScreen(lat, lon, mapState) {
             const mapWidth = 800;  // Map container width
