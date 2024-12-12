@@ -22,7 +22,14 @@
 
     <!-- Map state listener script -->
     <script>
-        let mapState = null; // Global variable to hold the map state
+        //let mapState = null; // Global variable to hold the map state
+        let mapState = getMapState();
+        if (!mapState || !mapState.zoom || !mapState.center) {
+            console.error("Map state is not valid yet:", mapState);
+            //return; // Exit early to avoid processing with invalid mapState
+            let mapState = getMapState() || { center: { lat: 51.5, lng: -0.1 }, zoom: 12 };
+        }
+
 
         // Listen for messages from map.html
         window.addEventListener("message", function (event) {
@@ -131,26 +138,59 @@
             }, 3000);
         }
 
-        // Fetch and process network data
+        function waitForMapState(callback) {
+            const interval = setInterval(() => {
+                const mapState = getMapState();
+                if (mapState && mapState.zoom && mapState.center) {
+                    clearInterval(interval); // Stop checking once mapState is valid
+                    callback(mapState); // Pass valid mapState to the next step
+                }
+            }, 100); // Check every 100ms
+        }
+
         fetch("network_data.json")
             .then(response => response.json())
             .then(data => {
-                const mapState = getMapState();
-                const networkData = {
-                    nodes: data.nodes.map(node => {
-                        const screenPos = latLonToScreen(node.lat, node.lon, mapState);
-                        return {
-                            id: node.id,
-                            cluster: node.cluster,
-                            x: screenPos.x,
-                            y: screenPos.y
-                        };
-                    }),
-                    links: data.links
-                };
-                drawNetwork(networkData);
+                waitForMapState(mapState => {
+                    console.log("Valid mapState received:", mapState);
+                    const networkData = {
+                        nodes: data.nodes.map(node => {
+                            const screenPos = latLonToScreen(node.lat, node.lon, mapState);
+                            return {
+                                id: node.id,
+                                cluster: node.cluster,
+                                x: screenPos.x,
+                                y: screenPos.y
+                            };
+                        }),
+                        links: data.links
+                    };
+                    drawNetwork(networkData);
+                });
             })
             .catch(error => console.error("Error loading network data:", error));
+
+
+        // Fetch and process network data
+        //fetch("network_data.json")
+        //    .then(response => response.json())
+        //    .then(data => {
+        //        const mapState = getMapState();
+        //        const networkData = {
+        //            nodes: data.nodes.map(node => {
+        //                const screenPos = latLonToScreen(node.lat, node.lon, mapState);
+        //                return {
+        //                    id: node.id,
+        //                    cluster: node.cluster,
+        //                    x: screenPos.x,
+        //                    y: screenPos.y
+        //                };
+        //            }),
+        //            links: data.links
+        //        };
+        //        drawNetwork(networkData);
+        //    })
+        //    .catch(error => console.error("Error loading network data:", error));
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
