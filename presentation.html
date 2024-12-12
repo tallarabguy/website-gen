@@ -6,6 +6,39 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            Reveal.initialize();
+            // Fetch and process network data when the slide changes
+            Reveal.on('slidechanged', function (event) {
+                const currentSlide = event.currentSlide;
+    
+                // Check if the current slide is the network visualization slide
+                if (currentSlide.querySelector("#network-container")) {
+                    console.log("Network visualization slide active.");
+    
+                    waitForMapState()
+                        .then(() => {
+                            fetch("network_data.json")
+                                .then(response => response.json())
+                                .then(data => {
+                                    drawNetwork({
+                                        nodes: data.nodes.map(node => ({
+                                            ...node,
+                                            x: latLonToScreen(node.lat, node.lon, mapState).x,
+                                            y: latLonToScreen(node.lat, node.lon, mapState).y
+                                        })),
+                                        links: data.links
+                                    });
+                                })
+                                .catch(error => console.error("Error loading network data:", error));
+                        })
+                        .catch(error => console.error("Error waiting for map state:", error));
+                }
+            });
+        });
+    </script>
     <style>
         body {
             background-color: #1E3A5F;
@@ -135,33 +168,7 @@
             }, 3000);
         }
 
-        // Fetch and process network data when the slide changes
-        Reveal.on('slidechanged', function (event) {
-            const currentSlide = event.currentSlide;
 
-            // Check if the current slide is the network visualization slide
-            if (currentSlide.querySelector("#network-container")) {
-                console.log("Network visualization slide active.");
-
-                waitForMapState()
-                    .then(() => {
-                        fetch("network_data.json")
-                            .then(response => response.json())
-                            .then(data => {
-                                drawNetwork({
-                                    nodes: data.nodes.map(node => ({
-                                        ...node,
-                                        x: latLonToScreen(node.lat, node.lon, mapState).x,
-                                        y: latLonToScreen(node.lat, node.lon, mapState).y
-                                    })),
-                                    links: data.links
-                                });
-                            })
-                            .catch(error => console.error("Error loading network data:", error));
-                    })
-                    .catch(error => console.error("Error waiting for map state:", error));
-            }
-        });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
