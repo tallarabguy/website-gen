@@ -25,13 +25,20 @@
         let mapState = null; // Global variable to hold the map state
 
 
-        // Listen for messages from map.html
-        window.addEventListener("message", function (event) {
-            if (event.data && event.data.type === "MAP_STATE") {
-                mapState = event.data.state;
-                console.log("Received map state from iframe:", mapState);
-            }
-        });
+        function waitForMapState() {
+            return new Promise((resolve, reject) => {
+                // Add event listener for message from iframe
+                window.addEventListener("message", function messageListener(event) {
+                    // Check if the message contains the map state
+                    if (event.data && event.data.type === "MAP_STATE") {
+                        mapState = event.data.state;
+                        console.log("Received map state from iframe:", mapState);
+
+                        // Remove the listener after receiving the state
+                        window.removeEventListener("message", messageListener);
+                        resolve(mapState);
+                    }
+                });
 
         // Function to get the map state
         function getMapState() {
@@ -134,25 +141,32 @@
 
 
         // Fetch and process network data
-        fetch("network_data.json")
-            .then(response => response.json())
-            .then(data => {
-                const mapState = getMapState();
-                const networkData = {
-                    nodes: data.nodes.map(node => {
-                        const screenPos = latLonToScreen(node.lat, node.lon, mapState);
-                        return {
-                            id: node.id,
-                            cluster: node.cluster,
-                            x: screenPos.x,
-                            y: screenPos.y
+        waitForMapState()
+            .then((mapState) => {
+                console.log("Successfully received map state:", mapState);
+                // Proceed with using mapState
+                fetch("network_data.json")
+                    .then(response => response.json())
+                    .then(data => {
+                        const networkData = {
+                            nodes: data.nodes.map(node => {
+                                const screenPos = latLonToScreen(node.lat, node.lon, mapState);
+                                return {
+                                    id: node.id,
+                                    cluster: node.cluster,
+                                    x: screenPos.x,
+                                    y: screenPos.y
+                                };
+                            }),
+                            links: data.links
                         };
-                    }),
-                    links: data.links
-                };
-                drawNetwork(networkData);
+                        drawNetwork(networkData);
+                    })
+                    .catch(error => console.error("Error loading network data:", error));
             })
-            .catch(error => console.error("Error loading network data:", error));
+            .catch((error) => {
+                console.error(error.message);
+            });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
