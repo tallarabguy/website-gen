@@ -14,6 +14,7 @@
             // Fetch and process network data when the slide changes
             Reveal.on('slidechanged', function (event) {
                 const currentSlide = event.currentSlide;
+                const previousSlide = event.previousSlide;
     
                 // Check if the current slide is the network visualization slide
                 if (currentSlide.querySelector("#network-container")) {
@@ -37,6 +38,13 @@
                         })
                         .catch(error => console.error("Error waiting for map state:", error));
                 }
+              // Handle transitioning away from the network visualization slide
+              if (previousSlide && previousSlide.querySelector("#network-container")) {
+                  console.log("Leaving the network visualization slide.");
+                  // Clear the network container to avoid overlapping visuals
+                  d3.select("#network-container").selectAll("*").remove();
+              }
+            
             });
         });
     </script>
@@ -105,6 +113,9 @@
         // Function to draw the network
         function drawNetwork(data) {
             const width = 800, height = 500;
+
+            // Clear the container
+            d3.select("#network-container").selectAll("*").remove();
 
             const svg = d3.select("#network-container")
                 .append("svg")
