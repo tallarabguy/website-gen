@@ -3,247 +3,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blueprint Presentation</title>
-    <!-- Reveal.js -->
+    <title>Community Presentation</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
-    <!-- Custom CSS -->
     <style>
-        /* Blueprint Background */
-        body {
-            background-color: #1E3A5F;
-        }
-
-        .blueprint {
-            color: #FFFFFF;
-            font-family: 'Roboto', sans-serif;
-            position: relative;
-            text-align: center;
-        }
-
-        /* Typography */
-        h1, h2 {
-            font-weight: 300; /* Light weight for a modern look */
-            margin-bottom: 1rem;
-        }
-        p, li {
-            font-size: 1.2rem;
-        }
-
-        /* Corner Borders */
-        .corner-borders {
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            padding: 2rem;
-            margin: auto;
-            max-width: 80%;
-            border-radius: 5px;
-        }
-
-        /* Animations */
-        .animated {
-            opacity: 0; /* Invisible initially */
-            animation-duration: 1.5s;
-            animation-fill-mode: forwards; /* Keep the final state after animation */
-        }
-
-        .fade-in {
-            animation-name: fadeIn;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .fade-in-up {
-            animation-name: fadeInUp;
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px); /* Slight upward motion */
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Scanline Reveal Effect */
-        @keyframes scanline-reveal {
-            0% {
-                opacity: 0;
-                text-shadow: 0 0 10px #ffffff;
-            }
-            50% {
-                opacity: 0.5;
-                text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff;
-            }
-            100% {
-                opacity: 1;
-                text-shadow: none;
-            }
-        }
-
-        .reveal-effect {
-            animation: scanline-reveal 1s ease-out;
-        }
+        /* Custom styles */
+        body { background-color: #1E3A5F; color: #FFFFFF; font-family: Arial, sans-serif; }
     </style>
-    <!-- D3.js -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
     <div class="reveal">
         <div class="slides">
-
-            <!-- Slide 1: Title -->
-            <section class="blueprint">
-                <div class="corner-borders">
-                    <h1 class="animated reveal-effect">IG 12 Presentation</h1>
-                    <p class="animated fade-in-up" style="animation-delay: 1s;">Innovating for Our Community</p>
-                </div>
+            <section>
+                <h1>Welcome to IG12</h1>
+                <p>Innovating for our community.</p>
             </section>
-
-            <!-- Slide 2: Introduction -->
-            <section class="blueprint">
-                <div class="corner-borders">
-                    <h2 class="animated fade-in" style="animation-delay: 0.5s;">Introduction</h2>
-                    <p class="animated fade-in-up" style="animation-delay: 1s;">
-                        Over the past year, I’ve worked as a pro-bono research consultant with universities and local community groups.
-                        This has inspired me to focus my efforts locally to help groups address complex questions.
-                    </p>
-                </div>
+            <section>
+                <h2>Mapping Community Groups</h2>
+                <iframe src="map.html" width="800" height="500" style="border:none;"></iframe>
             </section>
+            <section>
+                <h2>Network Configuration</h2>
+                <div id="network" style="width:800px; height:500px;"></div>
+                <script src="https://d3js.org/d3.v7.min.js"></script>
+                <script>
+                    d3.json("network_data.json").then(function(data) {
+                        console.log(data);
+                        const width = 800, height = 500;
 
-            <!-- Slide 3: Vision -->
-            <section class="blueprint">
-                <div class="corner-borders">
-                    <h2 class="animated fade-in" style="animation-delay: 0.5s;">Vision and Impact</h2>
-                    <ul>
-                        <li class="animated fade-in-up" style="animation-delay: 1s;">Build a knowledge asset for the community</li>
-                        <li class="animated fade-in-up" style="animation-delay: 1.5s;">Support strategic direction, knowledge production, and creative endeavors</li>
-                        <li class="animated fade-in-up" style="animation-delay: 2s;">Foster interconnectivity across diverse local groups</li>
-                    </ul>
-                </div>
-            </section>
+                        const svg = d3.select("#network")
+                                      .append("svg")
+                                      .attr("width", width)
+                                      .attr("height", height);
 
-            <!-- Slide 4: Analysis -->
-            <section class="blueprint">
-                <div class="corner-borders">
-                    <h2 class="animated fade-in" style="animation-delay: 0.5s;">Mapping Community Groups</h2>
-                    <p class="animated fade-in-up" style="animation-delay: 1s;">
-                        Combining data visualization with mapping to identify trends and opportunities.
-                    </p>
-                    <iframe src="map.html" width="90%" height="500px" style="border:none; margin: auto; display: block;"></iframe>
-                </div>
-            </section>
+                        const simulation = d3.forceSimulation(data.nodes)
+                            .force("link", d3.forceLink(data.links).id(d => d.id).distance(50))
+                            .force("charge", d3.forceManyBody().strength(-100))
+                            .force("center", d3.forceCenter(width / 2, height / 2));
 
-            <!-- Slide 5: Network Configuration -->
-            <section class="blueprint">
-                <div class="corner-borders">
-                    <h2 class="animated fade-in" style="animation-delay: 0.5s;">Network Configuration</h2>
-                    <p class="animated fade-in-up" style="animation-delay: 1s;">
-                        Visualizing connections between clusters of community groups.
-                    </p>
-                    <div id="network" style="width: 100%; height: 500px;"></div>
+                        const link = svg.append("g")
+                            .selectAll("line")
+                            .data(data.links)
+                            .enter().append("line")
+                            .attr("stroke", "#999")
+                            .attr("stroke-opacity", 0.6)
+                            .attr("stroke-width", 1);
 
-                    <script>
-                        d3.json("network_data.json").then(function(data) {
-                            console.log("Network data loaded:", data);
+                        const node = svg.append("g")
+                            .selectAll("circle")
+                            .data(data.nodes)
+                            .enter().append("circle")
+                            .attr("r", 5)
+                            .attr("fill", "#69b3a2");
 
-                            const width = document.getElementById("network").offsetWidth;
-                            const height = 500;
+                        simulation.on("tick", () => {
+                            link.attr("x1", d => d.source.x)
+                                .attr("y1", d => d.source.y)
+                                .attr("x2", d => d.target.x)
+                                .attr("y2", d => d.target.y);
 
-                            // Create an SVG canvas
-                            const svg = d3.select("#network")
-                                          .append("svg")
-                                          .attr("width", width)
-                                          .attr("height", height);
-
-                            // Projection for geographic data
-                            const projection = d3.geoMercator()
-                                                 .center([
-                                                     d3.mean(data.nodes, d => d.longitude),
-                                                     d3.mean(data.nodes, d => d.latitude)
-                                                 ])
-                                                 .translate([width / 2, height / 2])
-                                                 .scale(200000); // Adjust scale as needed
-
-                            // Map nodes to positions
-                            data.nodes.forEach(node => {
-                                const [x, y] = projection([node.longitude, node.latitude]);
-                                node.x = x;
-                                node.y = y;
-                            });
-
-                            // Draw links
-                            svg.selectAll("line")
-                               .data(data.links)
-                               .enter()
-                               .append("line")
-                               .attr("x1", d => data.nodes[d.source].x)
-                               .attr("y1", d => data.nodes[d.source].y)
-                               .attr("x2", d => data.nodes[d.target].x)
-                               .attr("y2", d => data.nodes[d.target].y)
-                               .attr("stroke", d => d3.schemeCategory10[d.category % 10])
-                               .attr("stroke-width", 1)
-                               .attr("opacity", 0.7);
-
-                            // Draw nodes
-                            svg.selectAll("circle")
-                               .data(data.nodes)
-                               .enter()
-                               .append("circle")
-                               .attr("cx", d => d.x)
-                               .attr("cy", d => d.y)
-                               .attr("r", 5)
-                               .attr("fill", d => d3.schemeCategory10[d.category % 10])
-                               .attr("stroke", "#fff")
-                               .attr("stroke-width", 1.5)
-                               .append("title")
-                               .text(d => d.name);
-                        }).catch(function(error) {
-                            console.error("Error loading network data:", error);
+                            node.attr("cx", d => d.x)
+                                .attr("cy", d => d.y);
                         });
-                    </script>
-                </div>
+                    }).catch(function(err) {
+                        console.error("Error loading network data:", err);
+                    });
+                </script>
             </section>
-
-            <!-- Slide 6: Next Steps -->
-            <section class="blueprint">
-                <div class="corner-borders">
-                    <h2 class="animated fade-in" style="animation-delay: 0.5s;">Next Steps</h2>
-                    <ul>
-                        <li class="animated fade-in-up" style="animation-delay: 1s;">Identify opportunity areas for research</li>
-                        <li class="animated fade-in-up" style="animation-delay: 1.5s;">Build partnerships with local groups</li>
-                        <li class="animated fade-in-up" style="animation-delay: 2s;">Leverage UCL's academic pipeline</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Slide 7: Closing -->
-            <section class="blueprint">
-                <div class="corner-borders">
-                    <h1 class="animated reveal-effect" style="animation-delay: 0.5s;">Thank You</h1>
-                    <p class="animated fade-in-up" style="animation-delay: 1s;">Contact: <a href="mailto:contact@ig12.com">contact@ig12.com</a></p>
-                    <p class="animated fade-in-up" style="animation-delay: 1.5s;">IG 12: Innovating for Our Community</p>
-                </div>
-            </section>
-
         </div>
     </div>
-
-    <!-- Reveal.js Script -->
     <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
-    <script>
-        Reveal.initialize({
-            transition: 'fade',
-            width: 960,
-            height: 700,
-            controls: true,
-            progress: true,
-        });
-    </script>
+    <script>Reveal.initialize();</script>
 </body>
 </html>
-
