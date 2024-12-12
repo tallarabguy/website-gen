@@ -13,92 +13,46 @@
             color: #FFFFFF;
             font-family: 'Poppins', Arial, sans-serif;
         }
+        h2 {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
     </style>
-</head>
-<body>
-    <div class="reveal">
-      <div class="slides">
-          <!-- Slide 1: Map -->
-          <section>
-              <h2>Mapping Community Groups</h2>
-              <iframe src="map.html" width="800" height="500" style="border:none;" id="folium-map"></iframe>
-          </section>
-
-          <!-- Slide 2: Network Visualization -->
-          <section>
-              <h2>Network Representation</h2>
-              <div id="network-container" style="width:800px; height:500px;"></div>
-          </section>
-      </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
     <script>Reveal.initialize();</script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 1: Map -->
+            <section>
+                <h2>Mapping Community Groups</h2>
+                <iframe src="map.html" width="800" height="500" style="border:none;" id="folium-map"></iframe>
+            </section>
+
+            <!-- Slide 2: Network Visualization -->
+            <section>
+                <h2>Network Representation</h2>
+                <div id="network-container" style="width:800px; height:500px;"></div>
+            </section>
+        </div>
+    </div>
 
     <script>
-        function transitionToNetworkFromMap() {
-            // Get the map state
-            const mapState = getMapState(); // Captured from the Folium map script
+        // Function to transform latitude/longitude to screen coordinates
+        function latLonToScreen(lat, lon, mapState) {
+            const mapWidth = 800;  // Map container width
+            const mapHeight = 500; // Map container height
+            const zoomScale = Math.pow(2, mapState.zoom);
 
-            // Transform lat/lon to screen coordinates
-            function latLonToScreen(lat, lon) {
-                const mapWidth = 800; // Map container width
-                const mapHeight = 500; // Map container height
-                const zoomScale = Math.pow(2, mapState.zoom);
+            const x = (lon - mapState.center.lng) * zoomScale + mapWidth / 2;
+            const y = (mapState.center.lat - lat) * zoomScale + mapHeight / 2;
 
-                // Convert lat/lon to relative x/y positions based on the map center
-                const x = (lon - mapState.center.lng) * zoomScale + mapWidth / 2;
-                const y = (mapState.center.lat - lat) * zoomScale + mapHeight / 2;
-                return { x, y };
-            }
-
-            // Generate network data from Folium nodes
-            const networkData = {
-                nodes: data.nodes.map(node => {
-                    const screenPos = latLonToScreen(node.lat, node.lon);
-                    return {
-                        id: node.id,
-                        cluster: node.cluster,
-                        x: screenPos.x,
-                        y: screenPos.y
-                    };
-                }),
-                links: data.links
-            };
-
-            // Pass networkData to D3.js for visualization
-            drawNetwork(networkData);
+            return { x, y };
         }
-    </script>
 
-    <script>
-        fetch("network_data.json")
-            .then(response => response.json())
-            .then(data => {
-                // Transform node positions based on map state
-                const networkData = {
-                    nodes: data.nodes.map(node => {
-                        const screenPos = latLonToScreen(node.lat, node.lon);
-                        return {
-                            id: node.id,
-                            cluster: node.cluster,
-                            x: screenPos.x,
-                            y: screenPos.y
-                        };
-                    }),
-                    links: data.links
-                };
-
-                // Pass networkData to D3.js for visualization
-                drawNetwork(networkData);
-            })
-            .catch(error => console.error("Error loading network data:", error));
-    </script>
-
-
-
-    <script>
+        // Function to draw the network
         function drawNetwork(data) {
             const width = 800, height = 500;
 
@@ -107,7 +61,7 @@
                 .attr("width", width)
                 .attr("height", height);
 
-            // Draw initial nodes and links
+            // Draw links
             const link = svg.append("g")
                 .selectAll("line")
                 .data(data.links)
@@ -120,6 +74,7 @@
                 .attr("stroke", "#999")
                 .attr("stroke-opacity", 0.6);
 
+            // Draw nodes
             const node = svg.append("g")
                 .selectAll("circle")
                 .data(data.nodes)
@@ -130,7 +85,7 @@
                 .attr("r", 10)
                 .attr("fill", d => d3.schemeCategory10[d.cluster]);
 
-            // Transition to a clustered layout
+            // Animation: Transition to clustered layout
             const simulation = d3.forceSimulation(data.nodes)
                 .force("link", d3.forceLink(data.links).id(d => d.id).distance(100))
                 .force("charge", d3.forceManyBody().strength(-100))
@@ -145,18 +100,35 @@
                         .attr("cy", d => d.y);
                 });
 
-            // Trigger node diffusion animation after a delay
             setTimeout(() => {
                 simulation.stop();
                 node.transition()
                     .duration(2000)
-                    .attr("cx", d => d.cluster === 0 ? 200 : d.cluster === 1 ? 400 : 600)
-                    .attr("cy", d => d.cluster === 0 ? 100 : d.cluster === 1 ? 300 : 500);
+                    .attr("cx", d => d.cluster * 200 + 100)
+                    .attr("cy", d => d.cluster * 100 + 100);
             }, 3000);
         }
+
+        // Fetch and process network data
+        fetch("network_data.json")
+            .then(response => response.json())
+            .then(data => {
+                const mapState = window.parent.getMapState();
+                const networkData = {
+                    nodes: data.nodes.map(node => {
+                        const screenPos = latLonToScreen(node.lat, node.lon, mapState);
+                        return {
+                            id: node.id,
+                            cluster: node.cluster,
+                            x: screenPos.x,
+                            y: screenPos.y
+                        };
+                    }),
+                    links: data.links
+                };
+                drawNetwork(networkData);
+            })
+            .catch(error => console.error("Error loading network data:", error));
     </script>
-
-
 </body>
 </html>
-
