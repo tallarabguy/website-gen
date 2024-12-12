@@ -1,0 +1,2661 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_02a54c0fd48a07c727f99c7e41dd3bf6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_02a54c0fd48a07c727f99c7e41dd3bf6" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_02a54c0fd48a07c727f99c7e41dd3bf6 = L.map(
+                "map_02a54c0fd48a07c727f99c7e41dd3bf6",
+                {
+                    center: [51.54647221693442, 0.09818596515910524],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4ff5a300777c4c100cfa24c5d829a2ac = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_4ff5a300777c4c100cfa24c5d829a2ac.addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+            var marker_be0d58d84697d96be31f02ba1beed0dd = L.marker(
+                [51.55653059999999, 0.1196779],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_8f172afebd6876d01e52546d79dc20ab = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_57b544ec43c1748bc4d16cc356f19519 = $(`<div id="html_57b544ec43c1748bc4d16cc356f19519" style="width: 100.0%; height: 100.0%;">Organization: AB PHAB Youth Club<br>Category: 2</div>`)[0];
+                popup_8f172afebd6876d01e52546d79dc20ab.setContent(html_57b544ec43c1748bc4d16cc356f19519);
+            
+        
+
+        marker_be0d58d84697d96be31f02ba1beed0dd.bindPopup(popup_8f172afebd6876d01e52546d79dc20ab)
+        ;
+
+        
+    
+    
+            var marker_4c08187ac228d9c786d626ae75d9f22b = L.marker(
+                [51.535357177056106, 0.0779979025364201],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_184e3f03f50ebc73f2eab28df71be95c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b1f59c21effb736378da92f1e469ccf0 = $(`<div id="html_b1f59c21effb736378da92f1e469ccf0" style="width: 100.0%; height: 100.0%;">Organization: Abbey Leisure Centre<br>Category: 4</div>`)[0];
+                popup_184e3f03f50ebc73f2eab28df71be95c.setContent(html_b1f59c21effb736378da92f1e469ccf0);
+            
+        
+
+        marker_4c08187ac228d9c786d626ae75d9f22b.bindPopup(popup_184e3f03f50ebc73f2eab28df71be95c)
+        ;
+
+        
+    
+    
+            var marker_9873b43a48fd54a8322877992f4f00b4 = L.marker(
+                [51.5614811651668, 0.0690482700166726],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_faea3a0306bcbfe55b577cb9a5f1563d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fe4e843d8c86e64c88159f3479ceafc1 = $(`<div id="html_fe4e843d8c86e64c88159f3479ceafc1" style="width: 100.0%; height: 100.0%;">Organization: Age UK Redbridge, Barking, Havering<br>Category: 2</div>`)[0];
+                popup_faea3a0306bcbfe55b577cb9a5f1563d.setContent(html_fe4e843d8c86e64c88159f3479ceafc1);
+            
+        
+
+        marker_9873b43a48fd54a8322877992f4f00b4.bindPopup(popup_faea3a0306bcbfe55b577cb9a5f1563d)
+        ;
+
+        
+    
+    
+            var marker_a7844253d065d0f9eb2bc8bd086e0762 = L.marker(
+                [51.5441868, 0.0770748],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_b2e3e40a7f34e2d10f977c166a886dd8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_26ab38f8485871d859ec6090d96a1915 = $(`<div id="html_26ab38f8485871d859ec6090d96a1915" style="width: 100.0%; height: 100.0%;">Organization: Al Madina Barking Mosque<br>Category: 5</div>`)[0];
+                popup_b2e3e40a7f34e2d10f977c166a886dd8.setContent(html_26ab38f8485871d859ec6090d96a1915);
+            
+        
+
+        marker_a7844253d065d0f9eb2bc8bd086e0762.bindPopup(popup_b2e3e40a7f34e2d10f977c166a886dd8)
+        ;
+
+        
+    
+    
+            var marker_21679ec1ac7f0548aa758478d90bf66b = L.marker(
+                [51.5355871, 0.0825211],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_40b7d56ce587960efab5333879bfd097 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f948022a44207ce35e845c40d0d2e3b1 = $(`<div id="html_f948022a44207ce35e845c40d0d2e3b1" style="width: 100.0%; height: 100.0%;">Organization: All Womens Network<br>Category: 2</div>`)[0];
+                popup_40b7d56ce587960efab5333879bfd097.setContent(html_f948022a44207ce35e845c40d0d2e3b1);
+            
+        
+
+        marker_21679ec1ac7f0548aa758478d90bf66b.bindPopup(popup_40b7d56ce587960efab5333879bfd097)
+        ;
+
+        
+    
+    
+            var marker_633887af901fd46a4a8f1d443711cc3f = L.marker(
+                [51.550935, 0.1310506],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_b7bbf5b61e0174c89a063cd213911b3c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5e2314ef4c70fa164144f6c27bffd2b6 = $(`<div id="html_5e2314ef4c70fa164144f6c27bffd2b6" style="width: 100.0%; height: 100.0%;">Organization: Arc Theatre<br>Category: 2</div>`)[0];
+                popup_b7bbf5b61e0174c89a063cd213911b3c.setContent(html_5e2314ef4c70fa164144f6c27bffd2b6);
+            
+        
+
+        marker_633887af901fd46a4a8f1d443711cc3f.bindPopup(popup_b7bbf5b61e0174c89a063cd213911b3c)
+        ;
+
+        
+    
+    
+            var marker_ed31a9c06405c63236d77e7dd5ac0663 = L.marker(
+                [51.54039419999999, 0.1484509],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_7613bca9194f0d281230c1e6a78fbe4c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2ab23188c9190230e9d227415b0ba6ef = $(`<div id="html_2ab23188c9190230e9d227415b0ba6ef" style="width: 100.0%; height: 100.0%;">Organization: B&D Works Job Shop<br>Category: 2</div>`)[0];
+                popup_7613bca9194f0d281230c1e6a78fbe4c.setContent(html_2ab23188c9190230e9d227415b0ba6ef);
+            
+        
+
+        marker_ed31a9c06405c63236d77e7dd5ac0663.bindPopup(popup_7613bca9194f0d281230c1e6a78fbe4c)
+        ;
+
+        
+    
+    
+            var marker_e3348e05e72680b6f72584dc141c3d1b = L.marker(
+                [51.5581948, 0.1316075],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_20ac1b7f4d02d14b2b0238fc3d4a3965 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9abc0c36cb18d57d6721d9e49e9a1a98 = $(`<div id="html_9abc0c36cb18d57d6721d9e49e9a1a98" style="width: 100.0%; height: 100.0%;">Organization: Ballerz<br>Category: 5</div>`)[0];
+                popup_20ac1b7f4d02d14b2b0238fc3d4a3965.setContent(html_9abc0c36cb18d57d6721d9e49e9a1a98);
+            
+        
+
+        marker_e3348e05e72680b6f72584dc141c3d1b.bindPopup(popup_20ac1b7f4d02d14b2b0238fc3d4a3965)
+        ;
+
+        
+    
+    
+            var marker_be124e7a2a8e2ef74d01f8f575a3e97a = L.marker(
+                [51.5604793, 0.1749016],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_84ecced4ee406880bb10ed1903313ad4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_42056ffefe3db83b96e581f0df2cb91a = $(`<div id="html_42056ffefe3db83b96e581f0df2cb91a" style="width: 100.0%; height: 100.0%;">Organization: Barking & Dagenham College<br>Category: 5</div>`)[0];
+                popup_84ecced4ee406880bb10ed1903313ad4.setContent(html_42056ffefe3db83b96e581f0df2cb91a);
+            
+        
+
+        marker_be124e7a2a8e2ef74d01f8f575a3e97a.bindPopup(popup_84ecced4ee406880bb10ed1903313ad4)
+        ;
+
+        
+    
+    
+            var marker_d7df50379b41531f5a8bbbeaee638ea8 = L.marker(
+                [51.5440255, 0.1456001],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_4c4d45f7ed33cd355a38a798a8aef93f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_29a893e2e6e278f96814317da909fe6c = $(`<div id="html_29a893e2e6e278f96814317da909fe6c" style="width: 100.0%; height: 100.0%;">Organization: Barking & Dagenham Progress Project<br>Category: 2</div>`)[0];
+                popup_4c4d45f7ed33cd355a38a798a8aef93f.setContent(html_29a893e2e6e278f96814317da909fe6c);
+            
+        
+
+        marker_d7df50379b41531f5a8bbbeaee638ea8.bindPopup(popup_4c4d45f7ed33cd355a38a798a8aef93f)
+        ;
+
+        
+    
+    
+            var marker_eb4263cf0ffc3047c650d26c8b856902 = L.marker(
+                [51.5396054, 0.0781415999999999],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_1170200218ec7f21f7a378d128f6fc28 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fea5ad2ecc3bf3357b41813eb35fbdb9 = $(`<div id="html_fea5ad2ecc3bf3357b41813eb35fbdb9" style="width: 100.0%; height: 100.0%;">Organization: Barking and Dagenham Giving<br>Category: 2</div>`)[0];
+                popup_1170200218ec7f21f7a378d128f6fc28.setContent(html_fea5ad2ecc3bf3357b41813eb35fbdb9);
+            
+        
+
+        marker_eb4263cf0ffc3047c650d26c8b856902.bindPopup(popup_1170200218ec7f21f7a378d128f6fc28)
+        ;
+
+        
+    
+    
+            var marker_b144cc684a6e10028a7fe07ea893d481 = L.marker(
+                [51.5362026, 0.0795092999999999],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_c3d97fcac156d261a9c93c0c436565ea = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f17b0f94d11bd108f9ada7e8b50d92bb = $(`<div id="html_f17b0f94d11bd108f9ada7e8b50d92bb" style="width: 100.0%; height: 100.0%;">Organization: Barking Churches Unite / Pit Stop / The Community Food Club<br>Category: 5</div>`)[0];
+                popup_c3d97fcac156d261a9c93c0c436565ea.setContent(html_f17b0f94d11bd108f9ada7e8b50d92bb);
+            
+        
+
+        marker_b144cc684a6e10028a7fe07ea893d481.bindPopup(popup_c3d97fcac156d261a9c93c0c436565ea)
+        ;
+
+        
+    
+    
+            var marker_b6b124cad397257efe0a3291d2207aa9 = L.marker(
+                [51.5396132, 0.0781534332298595],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_9d13c52d9ff1b6d6346568192b205344 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f0493fdbb144abd0fb637522333dacab = $(`<div id="html_f0493fdbb144abd0fb637522333dacab" style="width: 100.0%; height: 100.0%;">Organization: Barking Enterprise Centre<br>Category: 2</div>`)[0];
+                popup_9d13c52d9ff1b6d6346568192b205344.setContent(html_f0493fdbb144abd0fb637522333dacab);
+            
+        
+
+        marker_b6b124cad397257efe0a3291d2207aa9.bindPopup(popup_9d13c52d9ff1b6d6346568192b205344)
+        ;
+
+        
+    
+    
+            var marker_d8a1e58f9a15de7195e62cb0ecb7ab16 = L.marker(
+                [51.536153, 0.0805663],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_020244978d622fd6df3084f80339c531 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f98cdd08a77ec097fe5e100e45d45822 = $(`<div id="html_f98cdd08a77ec097fe5e100e45d45822" style="width: 100.0%; height: 100.0%;">Organization: Barking Food Bank (Trussell Trust)<br>Category: 5</div>`)[0];
+                popup_020244978d622fd6df3084f80339c531.setContent(html_f98cdd08a77ec097fe5e100e45d45822);
+            
+        
+
+        marker_d8a1e58f9a15de7195e62cb0ecb7ab16.bindPopup(popup_020244978d622fd6df3084f80339c531)
+        ;
+
+        
+    
+    
+            var marker_5d2e070e2dc055e910b414cd4aa2e966 = L.marker(
+                [51.5354838, 0.0782328],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_e63aa83f1d6eee15ce58b35098faf2a7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fd312dd77d6b76d3aae8191e6cba2b9a = $(`<div id="html_fd312dd77d6b76d3aae8191e6cba2b9a" style="width: 100.0%; height: 100.0%;">Organization: BDYD<br>Category: 5</div>`)[0];
+                popup_e63aa83f1d6eee15ce58b35098faf2a7.setContent(html_fd312dd77d6b76d3aae8191e6cba2b9a);
+            
+        
+
+        marker_5d2e070e2dc055e910b414cd4aa2e966.bindPopup(popup_e63aa83f1d6eee15ce58b35098faf2a7)
+        ;
+
+        
+    
+    
+            var marker_7b6d2f8dbe3e348d76ae6ef80323f459 = L.marker(
+                [51.558538850000005, 0.133591608700876],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_b739f398f56bcfd49429a228300e4569 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_422a845bfaf6f7f2c255d1f899321bac = $(`<div id="html_422a845bfaf6f7f2c255d1f899321bac" style="width: 100.0%; height: 100.0%;">Organization: Becontree Broadcasting Station community radio<br>Category: 2</div>`)[0];
+                popup_b739f398f56bcfd49429a228300e4569.setContent(html_422a845bfaf6f7f2c255d1f899321bac);
+            
+        
+
+        marker_7b6d2f8dbe3e348d76ae6ef80323f459.bindPopup(popup_b739f398f56bcfd49429a228300e4569)
+        ;
+
+        
+    
+    
+            var marker_1912af9fda57e8ddfb19eb9a5378b1fd = L.marker(
+                [51.5609465, 0.1488995],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_6237de1fbc676d18e1956efe4acb422d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_50d8f4bb9be5cbd9fd738b55b112841f = $(`<div id="html_50d8f4bb9be5cbd9fd738b55b112841f" style="width: 100.0%; height: 100.0%;">Organization: Becontree Heath Leisure Centre<br>Category: 4</div>`)[0];
+                popup_6237de1fbc676d18e1956efe4acb422d.setContent(html_50d8f4bb9be5cbd9fd738b55b112841f);
+            
+        
+
+        marker_1912af9fda57e8ddfb19eb9a5378b1fd.bindPopup(popup_6237de1fbc676d18e1956efe4acb422d)
+        ;
+
+        
+    
+    
+            var marker_c736f59496c028d7b8fbba3ce73f264c = L.marker(
+                [51.5408827, 0.0798445],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_76cb5a2cc73c9eb84df1a06bfd2c1d89 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c451c92eed4298da546abb894edd07a1 = $(`<div id="html_c451c92eed4298da546abb894edd07a1" style="width: 100.0%; height: 100.0%;">Organization: Bluebird Pictures<br>Category: 5</div>`)[0];
+                popup_76cb5a2cc73c9eb84df1a06bfd2c1d89.setContent(html_c451c92eed4298da546abb894edd07a1);
+            
+        
+
+        marker_c736f59496c028d7b8fbba3ce73f264c.bindPopup(popup_76cb5a2cc73c9eb84df1a06bfd2c1d89)
+        ;
+
+        
+    
+    
+            var marker_b7ae5b654d594783a3aa96ea37e3dcc5 = L.marker(
+                [51.5355871, 0.0825211],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_0eaa139a0814a71b8db2cf6909db73a3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2fc5fb37aa89a1d724799c1f51d11f9d = $(`<div id="html_2fc5fb37aa89a1d724799c1f51d11f9d" style="width: 100.0%; height: 100.0%;">Organization: bMoneywize<br>Category: 2</div>`)[0];
+                popup_0eaa139a0814a71b8db2cf6909db73a3.setContent(html_2fc5fb37aa89a1d724799c1f51d11f9d);
+            
+        
+
+        marker_b7ae5b654d594783a3aa96ea37e3dcc5.bindPopup(popup_0eaa139a0814a71b8db2cf6909db73a3)
+        ;
+
+        
+    
+    
+            var marker_9f924d7f7c612079293e7d8e3a74d3c0 = L.marker(
+                [51.54954205486964, 0.1383055989000424],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_29be238806a19c29d3015a9c0e1348bb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a18627b037e35a5be28a339716bd7669 = $(`<div id="html_a18627b037e35a5be28a339716bd7669" style="width: 100.0%; height: 100.0%;">Organization: BooksByMILE<br>Category: 5</div>`)[0];
+                popup_29be238806a19c29d3015a9c0e1348bb.setContent(html_a18627b037e35a5be28a339716bd7669);
+            
+        
+
+        marker_9f924d7f7c612079293e7d8e3a74d3c0.bindPopup(popup_29be238806a19c29d3015a9c0e1348bb)
+        ;
+
+        
+    
+    
+            var marker_cf12c109446ba8f3ea0b459c762fa1b6 = L.marker(
+                [51.56480227640491, 0.1471269430494509],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_3631078fa920f2480e95878a91b9861d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4338a83b61631727921a30341b4d6989 = $(`<div id="html_4338a83b61631727921a30341b4d6989" style="width: 100.0%; height: 100.0%;">Organization: Box Up Crime<br>Category: 2</div>`)[0];
+                popup_3631078fa920f2480e95878a91b9861d.setContent(html_4338a83b61631727921a30341b4d6989);
+            
+        
+
+        marker_cf12c109446ba8f3ea0b459c762fa1b6.bindPopup(popup_3631078fa920f2480e95878a91b9861d)
+        ;
+
+        
+    
+    
+            var marker_43dfb17a60ebc938e01215fe01521a10 = L.marker(
+                [51.5191684, -0.088553051700347],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_584bf1b0fccaa013b4076ccbab6de506 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bf81a6a7a70e793a78936db2e4d9cab9 = $(`<div id="html_bf81a6a7a70e793a78936db2e4d9cab9" style="width: 100.0%; height: 100.0%;">Organization: British Red Cross<br>Category: 2</div>`)[0];
+                popup_584bf1b0fccaa013b4076ccbab6de506.setContent(html_bf81a6a7a70e793a78936db2e4d9cab9);
+            
+        
+
+        marker_43dfb17a60ebc938e01215fe01521a10.bindPopup(popup_584bf1b0fccaa013b4076ccbab6de506)
+        ;
+
+        
+    
+    
+            var marker_e278d98145b3d108eaaeb2d2786cbff9 = L.marker(
+                [51.4899096, -0.0979757],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_da39ade044d4eed81718107dca25c9e8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a742f022362667cb28fe9dfc3b7804a9 = $(`<div id="html_a742f022362667cb28fe9dfc3b7804a9" style="width: 100.0%; height: 100.0%;">Organization: Cambridge House<br>Category: 2</div>`)[0];
+                popup_da39ade044d4eed81718107dca25c9e8.setContent(html_a742f022362667cb28fe9dfc3b7804a9);
+            
+        
+
+        marker_e278d98145b3d108eaaeb2d2786cbff9.bindPopup(popup_da39ade044d4eed81718107dca25c9e8)
+        ;
+
+        
+    
+    
+            var marker_9c06e285364fc64b0b4ddbb545647683 = L.marker(
+                [51.5395911, 0.0781584],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_ec0e72c2bc845095071170a95135456c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c37f42cff4e1ed1a0233813bf0cbdaca = $(`<div id="html_c37f42cff4e1ed1a0233813bf0cbdaca" style="width: 100.0%; height: 100.0%;">Organization: Care City CIC<br>Category: 2</div>`)[0];
+                popup_ec0e72c2bc845095071170a95135456c.setContent(html_c37f42cff4e1ed1a0233813bf0cbdaca);
+            
+        
+
+        marker_9c06e285364fc64b0b4ddbb545647683.bindPopup(popup_ec0e72c2bc845095071170a95135456c)
+        ;
+
+        
+    
+    
+            var marker_f51bf4a3cf28d473125b49cbaed57445 = L.marker(
+                [51.54512009622384, 0.1479457428405667],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_1c911b8fe4489ada03f4f70dd2801401 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_62b960324fc61ecd4d9b56a6a0d7df0c = $(`<div id="html_62b960324fc61ecd4d9b56a6a0d7df0c" style="width: 100.0%; height: 100.0%;">Organization: Carers of Barking & Dagenham<br>Category: 2</div>`)[0];
+                popup_1c911b8fe4489ada03f4f70dd2801401.setContent(html_62b960324fc61ecd4d9b56a6a0d7df0c);
+            
+        
+
+        marker_f51bf4a3cf28d473125b49cbaed57445.bindPopup(popup_1c911b8fe4489ada03f4f70dd2801401)
+        ;
+
+        
+    
+    
+            var marker_f90fc487741ba7e44402654c3a3445a5 = L.marker(
+                [51.5551724, 0.1275882],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_b532459063d1df44c52058bbb93516ea = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d200c2a9c22d9dc4fa8d933061b88ed9 = $(`<div id="html_d200c2a9c22d9dc4fa8d933061b88ed9" style="width: 100.0%; height: 100.0%;">Organization: Castle Point Hub<br>Category: 2</div>`)[0];
+                popup_b532459063d1df44c52058bbb93516ea.setContent(html_d200c2a9c22d9dc4fa8d933061b88ed9);
+            
+        
+
+        marker_f90fc487741ba7e44402654c3a3445a5.bindPopup(popup_b532459063d1df44c52058bbb93516ea)
+        ;
+
+        
+    
+    
+            var marker_3da7e96183838c8bae5995d0f1ae76b9 = L.marker(
+                [51.5519774, 0.1647554],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_4c5f256b9591a86b3cbf30c4eb3a1a54 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9a493cba0b422992a5ecc8b160737ddb = $(`<div id="html_9a493cba0b422992a5ecc8b160737ddb" style="width: 100.0%; height: 100.0%;">Organization: CGL (drug/alcohol)<br>Category: 2</div>`)[0];
+                popup_4c5f256b9591a86b3cbf30c4eb3a1a54.setContent(html_9a493cba0b422992a5ecc8b160737ddb);
+            
+        
+
+        marker_3da7e96183838c8bae5995d0f1ae76b9.bindPopup(popup_4c5f256b9591a86b3cbf30c4eb3a1a54)
+        ;
+
+        
+    
+    
+            var marker_b4e8ffb6db9fc4730dc6f0ad366f68e7 = L.marker(
+                [51.5362026, 0.0795092999999999],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_5015579b31291eeb523051a3eca037a1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_06d8f41f6a25fa2c3ebc46c01ff619cb = $(`<div id="html_06d8f41f6a25fa2c3ebc46c01ff619cb" style="width: 100.0%; height: 100.0%;">Organization: Citizens Advice Barking & Dagenham<br>Category: 2</div>`)[0];
+                popup_5015579b31291eeb523051a3eca037a1.setContent(html_06d8f41f6a25fa2c3ebc46c01ff619cb);
+            
+        
+
+        marker_b4e8ffb6db9fc4730dc6f0ad366f68e7.bindPopup(popup_5015579b31291eeb523051a3eca037a1)
+        ;
+
+        
+    
+    
+            var marker_851eb28251975330ecdc6361759ccffa = L.marker(
+                [51.50464275, -0.0466281],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_ae27037a2d21660fd54375909b2c51f6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2256c1b0ce57d65f606ac604337c17d8 = $(`<div id="html_2256c1b0ce57d65f606ac604337c17d8" style="width: 100.0%; height: 100.0%;">Organization: City of Faith<br>Category: 1</div>`)[0];
+                popup_ae27037a2d21660fd54375909b2c51f6.setContent(html_2256c1b0ce57d65f606ac604337c17d8);
+            
+        
+
+        marker_851eb28251975330ecdc6361759ccffa.bindPopup(popup_ae27037a2d21660fd54375909b2c51f6)
+        ;
+
+        
+    
+    
+            var marker_bb975e34f631671530e6f19a3a1f4061 = L.marker(
+                [51.53768925812415, 0.141195325937161],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_1ef9837c5f5e2f23580646a9db37ac59 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ce057fa8991e71bfec28dc474a982ded = $(`<div id="html_ce057fa8991e71bfec28dc474a982ded" style="width: 100.0%; height: 100.0%;">Organization: Cocoon – Early Years CIC<br>Category: 2</div>`)[0];
+                popup_1ef9837c5f5e2f23580646a9db37ac59.setContent(html_ce057fa8991e71bfec28dc474a982ded);
+            
+        
+
+        marker_bb975e34f631671530e6f19a3a1f4061.bindPopup(popup_1ef9837c5f5e2f23580646a9db37ac59)
+        ;
+
+        
+    
+    
+            var marker_2624b47edf9f93895f50306de2d7c8ce = L.marker(
+                [51.5451172, 0.0866468],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_e2bf3a49fca14ea4ccdabb5a0f6ca03d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9bb631ee94ee2e6f95f0fe53f3fe72e4 = $(`<div id="html_9bb631ee94ee2e6f95f0fe53f3fe72e4" style="width: 100.0%; height: 100.0%;">Organization: Company Drinks<br>Category: 5</div>`)[0];
+                popup_e2bf3a49fca14ea4ccdabb5a0f6ca03d.setContent(html_9bb631ee94ee2e6f95f0fe53f3fe72e4);
+            
+        
+
+        marker_2624b47edf9f93895f50306de2d7c8ce.bindPopup(popup_e2bf3a49fca14ea4ccdabb5a0f6ca03d)
+        ;
+
+        
+    
+    
+            var marker_7e9ce3ed718774c4a2a2f6c3437b0a10 = L.marker(
+                [51.5304864, 0.0803432999999977],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_6ec4ac9287948d3322e2872c01410df0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b4dd88835bde69fecacb672ddc36da8f = $(`<div id="html_b4dd88835bde69fecacb672ddc36da8f" style="width: 100.0%; height: 100.0%;">Organization: Creative B&D<br>Category: 2</div>`)[0];
+                popup_6ec4ac9287948d3322e2872c01410df0.setContent(html_b4dd88835bde69fecacb672ddc36da8f);
+            
+        
+
+        marker_7e9ce3ed718774c4a2a2f6c3437b0a10.bindPopup(popup_6ec4ac9287948d3322e2872c01410df0)
+        ;
+
+        
+    
+    
+            var marker_9270884cce1d3a091e2ed028b6f12dc8 = L.marker(
+                [51.5389996, 0.08097335],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_8740ef1c545ef8b00864e23681d20a32 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6c5fa3318159ee431abc14bc10c6b9de = $(`<div id="html_6c5fa3318159ee431abc14bc10c6b9de" style="width: 100.0%; height: 100.0%;">Organization: Creative Wellness Wonder<br>Category: 2</div>`)[0];
+                popup_8740ef1c545ef8b00864e23681d20a32.setContent(html_6c5fa3318159ee431abc14bc10c6b9de);
+            
+        
+
+        marker_9270884cce1d3a091e2ed028b6f12dc8.bindPopup(popup_8740ef1c545ef8b00864e23681d20a32)
+        ;
+
+        
+    
+    
+            var marker_adf07e69b792ba882835d576e66271ca = L.marker(
+                [51.55381916499116, 0.1601798010388726],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_f456bba1ea2f2d2d48193afe2c4c6883 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e0b456cc63cb786cb8c203adb43b7270 = $(`<div id="html_e0b456cc63cb786cb8c203adb43b7270" style="width: 100.0%; height: 100.0%;">Organization: CU London<br>Category: 5</div>`)[0];
+                popup_f456bba1ea2f2d2d48193afe2c4c6883.setContent(html_e0b456cc63cb786cb8c203adb43b7270);
+            
+        
+
+        marker_adf07e69b792ba882835d576e66271ca.bindPopup(popup_f456bba1ea2f2d2d48193afe2c4c6883)
+        ;
+
+        
+    
+    
+            var marker_982fab99f6b405c870a1a993a176c3ee = L.marker(
+                [51.5440255, 0.1456001],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_ab4b7ca2afaf75d3c1596d19991bd69b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e189320456803991df9027e66dcc1a28 = $(`<div id="html_e189320456803991df9027e66dcc1a28" style="width: 100.0%; height: 100.0%;">Organization: DABD<br>Category: 2</div>`)[0];
+                popup_ab4b7ca2afaf75d3c1596d19991bd69b.setContent(html_e189320456803991df9027e66dcc1a28);
+            
+        
+
+        marker_982fab99f6b405c870a1a993a176c3ee.bindPopup(popup_ab4b7ca2afaf75d3c1596d19991bd69b)
+        ;
+
+        
+    
+    
+            var marker_030f34734f001c5f170905c678560b8e = L.marker(
+                [51.54754415, 0.1598273472808563],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_273c0d551bac514bd516df8336681f8d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_11d8f572b58cdb89111b56a6dba7d615 = $(`<div id="html_11d8f572b58cdb89111b56a6dba7d615" style="width: 100.0%; height: 100.0%;">Organization: Dagenham and Redbridge FC Community Trust<br>Category: 5</div>`)[0];
+                popup_273c0d551bac514bd516df8336681f8d.setContent(html_11d8f572b58cdb89111b56a6dba7d615);
+            
+        
+
+        marker_030f34734f001c5f170905c678560b8e.bindPopup(popup_273c0d551bac514bd516df8336681f8d)
+        ;
+
+        
+    
+    
+            var marker_175b19795eaa092675df39b24b45d644 = L.marker(
+                [51.5400132, 0.1538234],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_04c1a8028cb227b571c45f684d191775 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_28c3fdad14f462f83b424e616e694e0a = $(`<div id="html_28c3fdad14f462f83b424e616e694e0a" style="width: 100.0%; height: 100.0%;">Organization: Dagenham Christians Together / Church Elm Hub<br>Category: 5</div>`)[0];
+                popup_04c1a8028cb227b571c45f684d191775.setContent(html_28c3fdad14f462f83b424e616e694e0a);
+            
+        
+
+        marker_175b19795eaa092675df39b24b45d644.bindPopup(popup_04c1a8028cb227b571c45f684d191775)
+        ;
+
+        
+    
+    
+            var marker_40c97ed1734100cb6cced5329a5c1fb4 = L.marker(
+                [51.55404516579223, 0.1600139825652791],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_25b30864f6a3d913f492fbdee9d95578 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ace8a078228177f89957a41fec057c33 = $(`<div id="html_ace8a078228177f89957a41fec057c33" style="width: 100.0%; height: 100.0%;">Organization: Dagenham Farm<br>Category: 5</div>`)[0];
+                popup_25b30864f6a3d913f492fbdee9d95578.setContent(html_ace8a078228177f89957a41fec057c33);
+            
+        
+
+        marker_40c97ed1734100cb6cced5329a5c1fb4.bindPopup(popup_25b30864f6a3d913f492fbdee9d95578)
+        ;
+
+        
+    
+    
+            var marker_6278426d79ab85fb3f5e21f35b9083ca = L.marker(
+                [51.5509303, 0.1286768],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_5768d2de06cd479aa26b915bb2b6d70b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9f7a444aa0ee0bd9d42edf15f7d8869d = $(`<div id="html_9f7a444aa0ee0bd9d42edf15f7d8869d" style="width: 100.0%; height: 100.0%;">Organization: Dagenham Ummah Welfare Trust<br>Category: 5</div>`)[0];
+                popup_5768d2de06cd479aa26b915bb2b6d70b.setContent(html_9f7a444aa0ee0bd9d42edf15f7d8869d);
+            
+        
+
+        marker_6278426d79ab85fb3f5e21f35b9083ca.bindPopup(popup_5768d2de06cd479aa26b915bb2b6d70b)
+        ;
+
+        
+    
+    
+            var marker_5b2de2b62580db2a24a3c9643df3922c = L.marker(
+                [51.5342629, 0.1135006191666666],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_6602a2cb9f471c588b588fb97f021d04 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fbf02863f3be0944f416b9118018fd12 = $(`<div id="html_fbf02863f3be0944f416b9118018fd12" style="width: 100.0%; height: 100.0%;">Organization: Darul Ummah Goresbrook Food Bank<br>Category: 3</div>`)[0];
+                popup_6602a2cb9f471c588b588fb97f021d04.setContent(html_fbf02863f3be0944f416b9118018fd12);
+            
+        
+
+        marker_5b2de2b62580db2a24a3c9643df3922c.bindPopup(popup_6602a2cb9f471c588b588fb97f021d04)
+        ;
+
+        
+    
+    
+            var marker_3165040b118baf8e9bfb95b12b93ec81 = L.marker(
+                [51.5612431, 0.1431181],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_d2a49ac3dd8b7c5d072695a4434e5e27 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c75e02a690041133e760fa1592c57e88 = $(`<div id="html_c75e02a690041133e760fa1592c57e88" style="width: 100.0%; height: 100.0%;">Organization: East African Education Foundation<br>Category: 2</div>`)[0];
+                popup_d2a49ac3dd8b7c5d072695a4434e5e27.setContent(html_c75e02a690041133e760fa1592c57e88);
+            
+        
+
+        marker_3165040b118baf8e9bfb95b12b93ec81.bindPopup(popup_d2a49ac3dd8b7c5d072695a4434e5e27)
+        ;
+
+        
+    
+    
+            var marker_e9a361d2b7516ea199e0baaf64b86806 = L.marker(
+                [51.53403347584285, 0.099498661509193],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_f5e0833c05db094ed8b81f66940de721 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_37f5c40525b58c5245c0e54cf375660d = $(`<div id="html_37f5c40525b58c5245c0e54cf375660d" style="width: 100.0%; height: 100.0%;">Organization: Eastbury Manor House<br>Category: 5</div>`)[0];
+                popup_f5e0833c05db094ed8b81f66940de721.setContent(html_37f5c40525b58c5245c0e54cf375660d);
+            
+        
+
+        marker_e9a361d2b7516ea199e0baaf64b86806.bindPopup(popup_f5e0833c05db094ed8b81f66940de721)
+        ;
+
+        
+    
+    
+            var marker_4784331e2f737333412bcef7b9929f17 = L.marker(
+                [51.55882829999999, 0.1140922],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_32b7aeff48ecbbe1919a17290359032d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_42b2944f90f2a23c471a1e15738fa432 = $(`<div id="html_42b2944f90f2a23c471a1e15738fa432" style="width: 100.0%; height: 100.0%;">Organization: Ekota Academy<br>Category: 2</div>`)[0];
+                popup_32b7aeff48ecbbe1919a17290359032d.setContent(html_42b2944f90f2a23c471a1e15738fa432);
+            
+        
+
+        marker_4784331e2f737333412bcef7b9929f17.bindPopup(popup_32b7aeff48ecbbe1919a17290359032d)
+        ;
+
+        
+    
+    
+            var marker_8de1531c2e0fada365a1d74cfae33ab7 = L.marker(
+                [51.5417808, 0.1434057],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_3e8794815ae60e64d9743a7ded1447f2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_01f57ff2385030720634dbb5955f8555 = $(`<div id="html_01f57ff2385030720634dbb5955f8555" style="width: 100.0%; height: 100.0%;">Organization: Elevate Her UK<br>Category: 2</div>`)[0];
+                popup_3e8794815ae60e64d9743a7ded1447f2.setContent(html_01f57ff2385030720634dbb5955f8555);
+            
+        
+
+        marker_8de1531c2e0fada365a1d74cfae33ab7.bindPopup(popup_3e8794815ae60e64d9743a7ded1447f2)
+        ;
+
+        
+    
+    
+            var marker_a28f538e0edae95ceeddb719256af3d5 = L.marker(
+                [51.7476326, 0.5097484999999999],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_6c71646f3fad56af535bacaefe5bc88e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_440d33e2e4311bc08cad590e446589e7 = $(`<div id="html_440d33e2e4311bc08cad590e446589e7" style="width: 100.0%; height: 100.0%;">Organization: Essex County Football Association<br>Category: 5</div>`)[0];
+                popup_6c71646f3fad56af535bacaefe5bc88e.setContent(html_440d33e2e4311bc08cad590e446589e7);
+            
+        
+
+        marker_a28f538e0edae95ceeddb719256af3d5.bindPopup(popup_6c71646f3fad56af535bacaefe5bc88e)
+        ;
+
+        
+    
+    
+            var marker_ce5ac1d068048468bc475054334a931a = L.marker(
+                [51.5304373, 0.133132900000001],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_31ac1c0f024de00bcddce59f6e8ddd06 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_caf31d671c5ef52c9ab60b807164036d = $(`<div id="html_caf31d671c5ef52c9ab60b807164036d" style="width: 100.0%; height: 100.0%;">Organization: Excel Womens Centre<br>Category: 2</div>`)[0];
+                popup_31ac1c0f024de00bcddce59f6e8ddd06.setContent(html_caf31d671c5ef52c9ab60b807164036d);
+            
+        
+
+        marker_ce5ac1d068048468bc475054334a931a.bindPopup(popup_31ac1c0f024de00bcddce59f6e8ddd06)
+        ;
+
+        
+    
+    
+            var marker_bdb83ae319b7cc273bf8a13851040c4c = L.marker(
+                [51.53350409999999, 0.1265312],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_03ca1470584fbba5c3b2bd51a88c01da = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_687896a20eefc2536b7e9db1cc79281f = $(`<div id="html_687896a20eefc2536b7e9db1cc79281f" style="width: 100.0%; height: 100.0%;">Organization: Finesse Sport<br>Category: 5</div>`)[0];
+                popup_03ca1470584fbba5c3b2bd51a88c01da.setContent(html_687896a20eefc2536b7e9db1cc79281f);
+            
+        
+
+        marker_bdb83ae319b7cc273bf8a13851040c4c.bindPopup(popup_03ca1470584fbba5c3b2bd51a88c01da)
+        ;
+
+        
+    
+    
+            var marker_5e34596d30432e4f0b5783c2e0d9b88f = L.marker(
+                [51.5390514, 0.0782198],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_59194bc301084ab894fde052c88ab652 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_13c59986bc711003cc796bc352565512 = $(`<div id="html_13c59986bc711003cc796bc352565512" style="width: 100.0%; height: 100.0%;">Organization: Flourish Family Centre<br>Category: 1</div>`)[0];
+                popup_59194bc301084ab894fde052c88ab652.setContent(html_13c59986bc711003cc796bc352565512);
+            
+        
+
+        marker_5e34596d30432e4f0b5783c2e0d9b88f.bindPopup(popup_59194bc301084ab894fde052c88ab652)
+        ;
+
+        
+    
+    
+            var marker_00ee25f6d9f5571c3c665faa2f4c57ce = L.marker(
+                [51.5441855, 0.0775349950310758],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_30ef5ab4117dbcd79121615d314eb974 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_863990914de45ef7796828d6b315a930 = $(`<div id="html_863990914de45ef7796828d6b315a930" style="width: 100.0%; height: 100.0%;">Organization: FoodCycle<br>Category: 5</div>`)[0];
+                popup_30ef5ab4117dbcd79121615d314eb974.setContent(html_863990914de45ef7796828d6b315a930);
+            
+        
+
+        marker_00ee25f6d9f5571c3c665faa2f4c57ce.bindPopup(popup_30ef5ab4117dbcd79121615d314eb974)
+        ;
+
+        
+    
+    
+            var marker_d3044eb84ec77e9a988f47e4ef37ca80 = L.marker(
+                [51.52133, -0.156883],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_6675daaebdce78420eab76a206696288 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8fbf562fac8b9a0ef175afc417594012 = $(`<div id="html_8fbf562fac8b9a0ef175afc417594012" style="width: 100.0%; height: 100.0%;">Organization: Footy Addicts<br>Category: 5</div>`)[0];
+                popup_6675daaebdce78420eab76a206696288.setContent(html_8fbf562fac8b9a0ef175afc417594012);
+            
+        
+
+        marker_d3044eb84ec77e9a988f47e4ef37ca80.bindPopup(popup_6675daaebdce78420eab76a206696288)
+        ;
+
+        
+    
+    
+            var marker_ad4a374fded9fbc13466ba8ed62c25ac = L.marker(
+                [51.5385813, 0.1115839],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_d305bf4142c34ca49f8f99e4feca0f79 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9fb7e5681ac720c854e9fa9399cb8015 = $(`<div id="html_9fb7e5681ac720c854e9fa9399cb8015" style="width: 100.0%; height: 100.0%;">Organization: Future M.O.L.D.S Communities<br>Category: 2</div>`)[0];
+                popup_d305bf4142c34ca49f8f99e4feca0f79.setContent(html_9fb7e5681ac720c854e9fa9399cb8015);
+            
+        
+
+        marker_ad4a374fded9fbc13466ba8ed62c25ac.bindPopup(popup_d305bf4142c34ca49f8f99e4feca0f79)
+        ;
+
+        
+    
+    
+            var marker_8efd5b6c5f5bb79a6a051bf64d5d43b4 = L.marker(
+                [51.54665666501502, 0.1250901972444613],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_6491392552be4baf04da34723de753e8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a7d16020737672e100f41d0b8255d2f7 = $(`<div id="html_a7d16020737672e100f41d0b8255d2f7" style="width: 100.0%; height: 100.0%;">Organization: Future Youth Zone<br>Category: 2</div>`)[0];
+                popup_6491392552be4baf04da34723de753e8.setContent(html_a7d16020737672e100f41d0b8255d2f7);
+            
+        
+
+        marker_8efd5b6c5f5bb79a6a051bf64d5d43b4.bindPopup(popup_6491392552be4baf04da34723de753e8)
+        ;
+
+        
+    
+    
+            var marker_dd06385241553302ec937d68fc20c0e9 = L.marker(
+                [51.567735859780825, 0.1014168905146045],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_c3e7380f8796d3c92116c34d91819329 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d145484c02fe06da8d5020ea074b7ef3 = $(`<div id="html_d145484c02fe06da8d5020ea074b7ef3" style="width: 100.0%; height: 100.0%;">Organization: Futureents<br>Category: 2</div>`)[0];
+                popup_c3e7380f8796d3c92116c34d91819329.setContent(html_d145484c02fe06da8d5020ea074b7ef3);
+            
+        
+
+        marker_dd06385241553302ec937d68fc20c0e9.bindPopup(popup_c3e7380f8796d3c92116c34d91819329)
+        ;
+
+        
+    
+    
+            var marker_6aab4e6e842649abb2c4d6c7cdb6d167 = L.marker(
+                [51.5410108, 0.1271515],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_bb12514bb97fc0f42c20ee31293d09f4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0d0118e4322a2e37f75f1c1feec0d409 = $(`<div id="html_0d0118e4322a2e37f75f1c1feec0d409" style="width: 100.0%; height: 100.0%;">Organization: GAAP Orphanage Foundation<br>Category: 2</div>`)[0];
+                popup_bb12514bb97fc0f42c20ee31293d09f4.setContent(html_0d0118e4322a2e37f75f1c1feec0d409);
+            
+        
+
+        marker_6aab4e6e842649abb2c4d6c7cdb6d167.bindPopup(popup_bb12514bb97fc0f42c20ee31293d09f4)
+        ;
+
+        
+    
+    
+            var marker_4f0e62fcb108d866192adfce38fa2e5a = L.marker(
+                [51.57253009999999, 0.1431623],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_8e603a490a73d4a5d47e5d63008bd426 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_61587996139f04b2a982d22a8944ee7c = $(`<div id="html_61587996139f04b2a982d22a8944ee7c" style="width: 100.0%; height: 100.0%;">Organization: Green Shoes Arts<br>Category: 2</div>`)[0];
+                popup_8e603a490a73d4a5d47e5d63008bd426.setContent(html_61587996139f04b2a982d22a8944ee7c);
+            
+        
+
+        marker_4f0e62fcb108d866192adfce38fa2e5a.bindPopup(popup_8e603a490a73d4a5d47e5d63008bd426)
+        ;
+
+        
+    
+    
+            var marker_9ce4ca86b57e62b3a5b75fe7ce9fda6c = L.marker(
+                [51.5649982, 0.1987391],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_47e588a8f5780bd0065282bd40118abf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e3a0a0c8b1d524096532369a0872077f = $(`<div id="html_e3a0a0c8b1d524096532369a0872077f" style="width: 100.0%; height: 100.0%;">Organization: Hamton Environmental Services Ltd – Total Facilities Management & Commercial Cleaning<br>Category: 2</div>`)[0];
+                popup_47e588a8f5780bd0065282bd40118abf.setContent(html_e3a0a0c8b1d524096532369a0872077f);
+            
+        
+
+        marker_9ce4ca86b57e62b3a5b75fe7ce9fda6c.bindPopup(popup_47e588a8f5780bd0065282bd40118abf)
+        ;
+
+        
+    
+    
+            var marker_c39f1368909924711c5b7d3b8b80d866 = L.marker(
+                [51.53269985, 0.1379858545157238],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_2eddaff579ce15282ffc11359d17a675 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dde8549a7a735ad78c03d9c36b2fe720 = $(`<div id="html_dde8549a7a735ad78c03d9c36b2fe720" style="width: 100.0%; height: 100.0%;">Organization: Harmony House Dagenham CIO<br>Category: 2</div>`)[0];
+                popup_2eddaff579ce15282ffc11359d17a675.setContent(html_dde8549a7a735ad78c03d9c36b2fe720);
+            
+        
+
+        marker_c39f1368909924711c5b7d3b8b80d866.bindPopup(popup_2eddaff579ce15282ffc11359d17a675)
+        ;
+
+        
+    
+    
+            var marker_9bf4daa698eeb3e49f141477acaeea64 = L.marker(
+                [51.5581261, 0.1288602],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_b1eec530f2ebe561d84ec9003c07495f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_26507b972dc87982ee6951a63b364ff1 = $(`<div id="html_26507b972dc87982ee6951a63b364ff1" style="width: 100.0%; height: 100.0%;">Organization: Healthwatch B&D<br>Category: 2</div>`)[0];
+                popup_b1eec530f2ebe561d84ec9003c07495f.setContent(html_26507b972dc87982ee6951a63b364ff1);
+            
+        
+
+        marker_9bf4daa698eeb3e49f141477acaeea64.bindPopup(popup_b1eec530f2ebe561d84ec9003c07495f)
+        ;
+
+        
+    
+    
+            var marker_91b2411fc59e75d1eb782efb1e812c1a = L.marker(
+                [51.55326413872707, 0.1552028838284685],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_a3d8148505018c58e9c9593955ace31d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c0c4f71b1723d8b3e06776d1689d14b3 = $(`<div id="html_c0c4f71b1723d8b3e06776d1689d14b3" style="width: 100.0%; height: 100.0%;">Organization: Heath Community Hub (previously William Bellamy)<br>Category: 3</div>`)[0];
+                popup_a3d8148505018c58e9c9593955ace31d.setContent(html_c0c4f71b1723d8b3e06776d1689d14b3);
+            
+        
+
+        marker_91b2411fc59e75d1eb782efb1e812c1a.bindPopup(popup_a3d8148505018c58e9c9593955ace31d)
+        ;
+
+        
+    
+    
+            var marker_02ee919738e62d47896d354183f95437 = L.marker(
+                [51.54205478868852, 0.0777012522536617],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_b4b5dc53c2895889c84a2c4d6cf27a8f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0c6425c4e27d68d9b7f1ba4a7d5736a0 = $(`<div id="html_0c6425c4e27d68d9b7f1ba4a7d5736a0" style="width: 100.0%; height: 100.0%;">Organization: Hilltop Aid<br>Category: 2</div>`)[0];
+                popup_b4b5dc53c2895889c84a2c4d6cf27a8f.setContent(html_0c6425c4e27d68d9b7f1ba4a7d5736a0);
+            
+        
+
+        marker_02ee919738e62d47896d354183f95437.bindPopup(popup_b4b5dc53c2895889c84a2c4d6cf27a8f)
+        ;
+
+        
+    
+    
+            var marker_613a497bbe08ad4b296e97c10827154b = L.marker(
+                [51.5355871, 0.0825211],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_d7b17661fdcb0bda13c86647d5bc7abd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9f11747df8f516d0405ca4fb74994d54 = $(`<div id="html_9f11747df8f516d0405ca4fb74994d54" style="width: 100.0%; height: 100.0%;">Organization: Humdum UK<br>Category: 5</div>`)[0];
+                popup_d7b17661fdcb0bda13c86647d5bc7abd.setContent(html_9f11747df8f516d0405ca4fb74994d54);
+            
+        
+
+        marker_613a497bbe08ad4b296e97c10827154b.bindPopup(popup_d7b17661fdcb0bda13c86647d5bc7abd)
+        ;
+
+        
+    
+    
+            var marker_920903393681f30c54c8c7f1933aae37 = L.marker(
+                [51.52790915, 0.1044220031635981],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_cf50911ab14a4a41240fd940ecea3ae6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_65ede44f6541ee343c30db87c74b873a = $(`<div id="html_65ede44f6541ee343c30db87c74b873a" style="width: 100.0%; height: 100.0%;">Organization: Humourisk CIC<br>Category: 2</div>`)[0];
+                popup_cf50911ab14a4a41240fd940ecea3ae6.setContent(html_65ede44f6541ee343c30db87c74b873a);
+            
+        
+
+        marker_920903393681f30c54c8c7f1933aae37.bindPopup(popup_cf50911ab14a4a41240fd940ecea3ae6)
+        ;
+
+        
+    
+    
+            var marker_f9dcf14a1580f406dc806e57f0b5918a = L.marker(
+                [51.5464273, 0.1695508],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_3dd90fbebf84bf228828fbb10e2a9c09 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_32ae73fc2c64747cae1d043a1d8c5a58 = $(`<div id="html_32ae73fc2c64747cae1d043a1d8c5a58" style="width: 100.0%; height: 100.0%;">Organization: J-GO media/training<br>Category: 2</div>`)[0];
+                popup_3dd90fbebf84bf228828fbb10e2a9c09.setContent(html_32ae73fc2c64747cae1d043a1d8c5a58);
+            
+        
+
+        marker_f9dcf14a1580f406dc806e57f0b5918a.bindPopup(popup_3dd90fbebf84bf228828fbb10e2a9c09)
+        ;
+
+        
+    
+    
+            var marker_3d9c1016092ecfc20fef502a91964097 = L.marker(
+                [51.5355871, 0.0825211],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_6daf53cc0212862569110b9cbe981309 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_10f018d42a9cb6230864008b059de09c = $(`<div id="html_10f018d42a9cb6230864008b059de09c" style="width: 100.0%; height: 100.0%;">Organization: JDS Striving For Excellence CIC<br>Category: 2</div>`)[0];
+                popup_6daf53cc0212862569110b9cbe981309.setContent(html_10f018d42a9cb6230864008b059de09c);
+            
+        
+
+        marker_3d9c1016092ecfc20fef502a91964097.bindPopup(popup_6daf53cc0212862569110b9cbe981309)
+        ;
+
+        
+    
+    
+            var marker_109f9032d06fadf9879767ebdd82b3bf = L.marker(
+                [51.550935, 0.1310506],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_a62e1d2fab789e984752a71e16737dea = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_678ef45cf71652d091a5cebe18cd89e9 = $(`<div id="html_678ef45cf71652d091a5cebe18cd89e9" style="width: 100.0%; height: 100.0%;">Organization: Kingsley Hall Church and Community Centre<br>Category: 5</div>`)[0];
+                popup_a62e1d2fab789e984752a71e16737dea.setContent(html_678ef45cf71652d091a5cebe18cd89e9);
+            
+        
+
+        marker_109f9032d06fadf9879767ebdd82b3bf.bindPopup(popup_a62e1d2fab789e984752a71e16737dea)
+        ;
+
+        
+    
+    
+            var marker_36738fccd5cb71738e9bab4b98934e14 = L.marker(
+                [51.55252458082413, 0.1408883133101529],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_49e7dcc8ebc678dd4a0d928a70330925 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7985e6e1d0ed7ea7f522afeb10a54780 = $(`<div id="html_7985e6e1d0ed7ea7f522afeb10a54780" style="width: 100.0%; height: 100.0%;">Organization: Kiwanis Young Professionals United Kingdom<br>Category: 2</div>`)[0];
+                popup_49e7dcc8ebc678dd4a0d928a70330925.setContent(html_7985e6e1d0ed7ea7f522afeb10a54780);
+            
+        
+
+        marker_36738fccd5cb71738e9bab4b98934e14.bindPopup(popup_49e7dcc8ebc678dd4a0d928a70330925)
+        ;
+
+        
+    
+    
+            var marker_265c8adfcb1e23e1abcb10b763ba0403 = L.marker(
+                [51.539935400000005, 0.0035654471602345],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_1ee4e6527f051694d56752fb58bbb529 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_89c23f1912c6dec3b71a89474a9aea5e = $(`<div id="html_89c23f1912c6dec3b71a89474a9aea5e" style="width: 100.0%; height: 100.0%;">Organization: L&Q Group<br>Category: 2</div>`)[0];
+                popup_1ee4e6527f051694d56752fb58bbb529.setContent(html_89c23f1912c6dec3b71a89474a9aea5e);
+            
+        
+
+        marker_265c8adfcb1e23e1abcb10b763ba0403.bindPopup(popup_1ee4e6527f051694d56752fb58bbb529)
+        ;
+
+        
+    
+    
+            var marker_26947761ff579bf3b4a8f32d63f2ffcd = L.marker(
+                [51.5319454, 0.0763061999999999],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_b621315d1cf64b9b3335e54086c5a5ff = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_76c57c4fada84934f29df5f3146c1335 = $(`<div id="html_76c57c4fada84934f29df5f3146c1335" style="width: 100.0%; height: 100.0%;">Organization: Laura I. Art Gallery CIC<br>Category: 2</div>`)[0];
+                popup_b621315d1cf64b9b3335e54086c5a5ff.setContent(html_76c57c4fada84934f29df5f3146c1335);
+            
+        
+
+        marker_26947761ff579bf3b4a8f32d63f2ffcd.bindPopup(popup_b621315d1cf64b9b3335e54086c5a5ff)
+        ;
+
+        
+    
+    
+            var marker_c9d369ff589234edc0c51915bea8f71c = L.marker(
+                [51.54205478868852, 0.0777012522536617],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_704cffee8d9c519629fd8421b198a01f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_927a356a21674bc619d22332ee74aba0 = $(`<div id="html_927a356a21674bc619d22332ee74aba0" style="width: 100.0%; height: 100.0%;">Organization: Life Brooks International<br>Category: 2</div>`)[0];
+                popup_704cffee8d9c519629fd8421b198a01f.setContent(html_927a356a21674bc619d22332ee74aba0);
+            
+        
+
+        marker_c9d369ff589234edc0c51915bea8f71c.bindPopup(popup_704cffee8d9c519629fd8421b198a01f)
+        ;
+
+        
+    
+    
+            var marker_629fdaeeb3f05b91e306c57cd14c7155 = L.marker(
+                [51.557673220329455, 0.1290466314317184],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_15b205b595170885adc33ca934c5d97b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ae681c000221dcfb64abdb712a9498f9 = $(`<div id="html_ae681c000221dcfb64abdb712a9498f9" style="width: 100.0%; height: 100.0%;">Organization: Lifeline Projects<br>Category: 2</div>`)[0];
+                popup_15b205b595170885adc33ca934c5d97b.setContent(html_ae681c000221dcfb64abdb712a9498f9);
+            
+        
+
+        marker_629fdaeeb3f05b91e306c57cd14c7155.bindPopup(popup_15b205b595170885adc33ca934c5d97b)
+        ;
+
+        
+    
+    
+            var marker_0fbd6bd594b45805e7007643da09e694 = L.marker(
+                [51.54549231781423, 0.1409261887002089],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_43d3786d1c4fc88fdb55f8eda33b7790 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fede73ca3b36810023f228b8c8be4d23 = $(`<div id="html_fede73ca3b36810023f228b8c8be4d23" style="width: 100.0%; height: 100.0%;">Organization: London Riverside Church<br>Category: 5</div>`)[0];
+                popup_43d3786d1c4fc88fdb55f8eda33b7790.setContent(html_fede73ca3b36810023f228b8c8be4d23);
+            
+        
+
+        marker_0fbd6bd594b45805e7007643da09e694.bindPopup(popup_43d3786d1c4fc88fdb55f8eda33b7790)
+        ;
+
+        
+    
+    
+            var marker_6a5d0eaac6ab7ff7b6d7029eeaa73328 = L.marker(
+                [51.5847541, 0.1354167],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_8d790b4e3d7dd62e520466aeed489c20 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fbd8fa6a8ec5ccdf7be243e424272cf9 = $(`<div id="html_fbd8fa6a8ec5ccdf7be243e424272cf9" style="width: 100.0%; height: 100.0%;">Organization: Marks Gate Community Hub<br>Category: 3</div>`)[0];
+                popup_8d790b4e3d7dd62e520466aeed489c20.setContent(html_fbd8fa6a8ec5ccdf7be243e424272cf9);
+            
+        
+
+        marker_6a5d0eaac6ab7ff7b6d7029eeaa73328.bindPopup(popup_8d790b4e3d7dd62e520466aeed489c20)
+        ;
+
+        
+    
+    
+            var marker_2a46cc370bbc43f8fd5f86e43ed68862 = L.marker(
+                [51.5847432, 0.1372871],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_9eaa70c5ca56cea7ecc0b99293938db6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7caabda45b8715ec71425b7a0aaef323 = $(`<div id="html_7caabda45b8715ec71425b7a0aaef323" style="width: 100.0%; height: 100.0%;">Organization: Marks Gate Nursery & Pre School<br>Category: 2</div>`)[0];
+                popup_9eaa70c5ca56cea7ecc0b99293938db6.setContent(html_7caabda45b8715ec71425b7a0aaef323);
+            
+        
+
+        marker_2a46cc370bbc43f8fd5f86e43ed68862.bindPopup(popup_9eaa70c5ca56cea7ecc0b99293938db6)
+        ;
+
+        
+    
+    
+            var marker_86f80afb469b025b44abed974a84c7ce = L.marker(
+                [51.5636665, 0.2075517],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_d60a3904431310d87eebd713fada34c4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c3f047400777a0152b38b91ee559949d = $(`<div id="html_c3f047400777a0152b38b91ee559949d" style="width: 100.0%; height: 100.0%;">Organization: MIND Barking & Dagenham<br>Category: 2</div>`)[0];
+                popup_d60a3904431310d87eebd713fada34c4.setContent(html_c3f047400777a0152b38b91ee559949d);
+            
+        
+
+        marker_86f80afb469b025b44abed974a84c7ce.bindPopup(popup_d60a3904431310d87eebd713fada34c4)
+        ;
+
+        
+    
+    
+            var marker_33e908f5b55a8c4aea3193315b48bacc = L.marker(
+                [51.5385813, 0.1115839],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_9b947c6ea4af857551249602f4e9159a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fc7228c34e985910a2b9ef8e7daf290e = $(`<div id="html_fc7228c34e985910a2b9ef8e7daf290e" style="width: 100.0%; height: 100.0%;">Organization: Mums on a mission<br>Category: 2</div>`)[0];
+                popup_9b947c6ea4af857551249602f4e9159a.setContent(html_fc7228c34e985910a2b9ef8e7daf290e);
+            
+        
+
+        marker_33e908f5b55a8c4aea3193315b48bacc.bindPopup(popup_9b947c6ea4af857551249602f4e9159a)
+        ;
+
+        
+    
+    
+            var marker_04ef8a202714b81888ee9e6690f98da0 = L.marker(
+                [51.5312441, -0.1177579],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_56c888bbe28fec5514168b2283f5102b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_823ac2771f44e928de9f7d8c4bad86fc = $(`<div id="html_823ac2771f44e928de9f7d8c4bad86fc" style="width: 100.0%; height: 100.0%;">Organization: New Europeans UK<br>Category: 2</div>`)[0];
+                popup_56c888bbe28fec5514168b2283f5102b.setContent(html_823ac2771f44e928de9f7d8c4bad86fc);
+            
+        
+
+        marker_04ef8a202714b81888ee9e6690f98da0.bindPopup(popup_56c888bbe28fec5514168b2283f5102b)
+        ;
+
+        
+    
+    
+            var marker_4b4ffbfea87065941e99833716d8909e = L.marker(
+                [51.5849255, 0.1355262],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_b4aaa0a08bd6dd3f8d18b16af3a04b20 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_42d7b1f7f22d1c3dc238ca9cedfa2f35 = $(`<div id="html_42d7b1f7f22d1c3dc238ca9cedfa2f35" style="width: 100.0%; height: 100.0%;">Organization: North Meets South<br>Category: 2</div>`)[0];
+                popup_b4aaa0a08bd6dd3f8d18b16af3a04b20.setContent(html_42d7b1f7f22d1c3dc238ca9cedfa2f35);
+            
+        
+
+        marker_4b4ffbfea87065941e99833716d8909e.bindPopup(popup_b4aaa0a08bd6dd3f8d18b16af3a04b20)
+        ;
+
+        
+    
+    
+            var marker_ac34cc0ac0202a3c71d2cefd6f316800 = L.marker(
+                [51.573059, 0.1469905],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_6d6de9a68212a4992845b505ce8e7612 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a06354b7984ae512e9d40c854284da9b = $(`<div id="html_a06354b7984ae512e9d40c854284da9b" style="width: 100.0%; height: 100.0%;">Organization: PAT Project<br>Category: 2</div>`)[0];
+                popup_6d6de9a68212a4992845b505ce8e7612.setContent(html_a06354b7984ae512e9d40c854284da9b);
+            
+        
+
+        marker_ac34cc0ac0202a3c71d2cefd6f316800.bindPopup(popup_6d6de9a68212a4992845b505ce8e7612)
+        ;
+
+        
+    
+    
+            var marker_019cb817c611aaf19d4520c2e6c5b166 = L.marker(
+                [51.54039419999999, 0.1484509],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_aab20969b73a392702337535d29daaef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bbd53e1ec2bc41107257fbd24332f1bc = $(`<div id="html_bbd53e1ec2bc41107257fbd24332f1bc" style="width: 100.0%; height: 100.0%;">Organization: Pen To Print<br>Category: 2</div>`)[0];
+                popup_aab20969b73a392702337535d29daaef.setContent(html_bbd53e1ec2bc41107257fbd24332f1bc);
+            
+        
+
+        marker_019cb817c611aaf19d4520c2e6c5b166.bindPopup(popup_aab20969b73a392702337535d29daaef)
+        ;
+
+        
+    
+    
+            var marker_65411973570ffe274d54c22bcc802ae8 = L.marker(
+                [51.51801988158922, 0.0371656057082427],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_eb72f53e5fd323a5af3ecb4461987172 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a1860ba754385a573e7f01fc269f9189 = $(`<div id="html_a1860ba754385a573e7f01fc269f9189" style="width: 100.0%; height: 100.0%;">Organization: PINKYTIPS<br>Category: 2</div>`)[0];
+                popup_eb72f53e5fd323a5af3ecb4461987172.setContent(html_a1860ba754385a573e7f01fc269f9189);
+            
+        
+
+        marker_65411973570ffe274d54c22bcc802ae8.bindPopup(popup_eb72f53e5fd323a5af3ecb4461987172)
+        ;
+
+        
+    
+    
+            var marker_9b0df7e2d68f653f16ff32db933b4cf9 = L.marker(
+                [51.55646951607297, 0.1078500492590623],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_f31d54c158958f40c2433996d28260d8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_21de12e959107c912c8463c4b1f962dd = $(`<div id="html_21de12e959107c912c8463c4b1f962dd" style="width: 100.0%; height: 100.0%;">Organization: Positive Change<br>Category: 2</div>`)[0];
+                popup_f31d54c158958f40c2433996d28260d8.setContent(html_21de12e959107c912c8463c4b1f962dd);
+            
+        
+
+        marker_9b0df7e2d68f653f16ff32db933b4cf9.bindPopup(popup_f31d54c158958f40c2433996d28260d8)
+        ;
+
+        
+    
+    
+            var marker_9546a6a369691301cf32f87a5155b20d = L.marker(
+                [51.55085829999999, 0.1575644],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_9c61ed891f84bf267ad18404eb2b330c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4dce6fff0c5f4ad4239463e488ace632 = $(`<div id="html_4dce6fff0c5f4ad4239463e488ace632" style="width: 100.0%; height: 100.0%;">Organization: Power House Community Network<br>Category: 5</div>`)[0];
+                popup_9c61ed891f84bf267ad18404eb2b330c.setContent(html_4dce6fff0c5f4ad4239463e488ace632);
+            
+        
+
+        marker_9546a6a369691301cf32f87a5155b20d.bindPopup(popup_9c61ed891f84bf267ad18404eb2b330c)
+        ;
+
+        
+    
+    
+            var marker_2525da0bcf90d06adb44a82b86ab7ab2 = L.marker(
+                [51.5355693, 0.0826865],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_bde53d9beb1b420576d24aaaaa74db61 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ed509c0142c7e1e1a03d40bb497b9eb1 = $(`<div id="html_ed509c0142c7e1e1a03d40bb497b9eb1" style="width: 100.0%; height: 100.0%;">Organization: Radiant Ambitions CIC<br>Category: 2</div>`)[0];
+                popup_bde53d9beb1b420576d24aaaaa74db61.setContent(html_ed509c0142c7e1e1a03d40bb497b9eb1);
+            
+        
+
+        marker_2525da0bcf90d06adb44a82b86ab7ab2.bindPopup(popup_bde53d9beb1b420576d24aaaaa74db61)
+        ;
+
+        
+    
+    
+            var marker_2aa927c4092eeb3be3546d26db8fd5b1 = L.marker(
+                [51.5106776, 0.0435105999999999],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_9d235cf062d50617b9d94c5fb7905e4c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ffba1add9468546ff4b110f8f20fe839 = $(`<div id="html_ffba1add9468546ff4b110f8f20fe839" style="width: 100.0%; height: 100.0%;">Organization: Richards House Childrens Hospice<br>Category: 2</div>`)[0];
+                popup_9d235cf062d50617b9d94c5fb7905e4c.setContent(html_ffba1add9468546ff4b110f8f20fe839);
+            
+        
+
+        marker_2aa927c4092eeb3be3546d26db8fd5b1.bindPopup(popup_9d235cf062d50617b9d94c5fb7905e4c)
+        ;
+
+        
+    
+    
+            var marker_640ff338d2c7b739c8d4ff4d0a3217bd = L.marker(
+                [51.6749262, 0.2149906],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_2aaa7b07e395ca132098a099f4edeb60 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7f19e55ad20eebf2dce5e7e75f4c253e = $(`<div id="html_7f19e55ad20eebf2dce5e7e75f4c253e" style="width: 100.0%; height: 100.0%;">Organization: River Roding Trust<br>Category: 2</div>`)[0];
+                popup_2aaa7b07e395ca132098a099f4edeb60.setContent(html_7f19e55ad20eebf2dce5e7e75f4c253e);
+            
+        
+
+        marker_640ff338d2c7b739c8d4ff4d0a3217bd.bindPopup(popup_2aaa7b07e395ca132098a099f4edeb60)
+        ;
+
+        
+    
+    
+            var marker_52194d3ee1af86f4023613c328cd4bd9 = L.marker(
+                [51.5247171, 0.1062148],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_dce49fb57232a6e99a138b25c283f0db = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0f584633ea03bd43233535c8b7167c5f = $(`<div id="html_0f584633ea03bd43233535c8b7167c5f" style="width: 100.0%; height: 100.0%;">Organization: Rwandese Abagimigambi (RWAAB)<br>Category: 2</div>`)[0];
+                popup_dce49fb57232a6e99a138b25c283f0db.setContent(html_0f584633ea03bd43233535c8b7167c5f);
+            
+        
+
+        marker_52194d3ee1af86f4023613c328cd4bd9.bindPopup(popup_dce49fb57232a6e99a138b25c283f0db)
+        ;
+
+        
+    
+    
+            var marker_5a6eb9ef9b7827bdbae22778c34d21a1 = L.marker(
+                [51.53151105, 0.0759939057149919],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_16157508b0bb0bc8bb381f4965f04692 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6e9d5f9a9ec9f751bead399b800f8244 = $(`<div id="html_6e9d5f9a9ec9f751bead399b800f8244" style="width: 100.0%; height: 100.0%;">Organization: Sew London Project<br>Category: 2</div>`)[0];
+                popup_16157508b0bb0bc8bb381f4965f04692.setContent(html_6e9d5f9a9ec9f751bead399b800f8244);
+            
+        
+
+        marker_5a6eb9ef9b7827bdbae22778c34d21a1.bindPopup(popup_16157508b0bb0bc8bb381f4965f04692)
+        ;
+
+        
+    
+    
+            var marker_0d179f0e02bb7b3808710adfb51ec120 = L.marker(
+                [51.5208727, 0.0209520217064596],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_c6daca78200e14e52e9b3346e2c23b20 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1de4fc28509438fe5ecc92c59e5be318 = $(`<div id="html_1de4fc28509438fe5ecc92c59e5be318" style="width: 100.0%; height: 100.0%;">Organization: Shpresa Programme<br>Category: 2</div>`)[0];
+                popup_c6daca78200e14e52e9b3346e2c23b20.setContent(html_1de4fc28509438fe5ecc92c59e5be318);
+            
+        
+
+        marker_0d179f0e02bb7b3808710adfb51ec120.bindPopup(popup_c6daca78200e14e52e9b3346e2c23b20)
+        ;
+
+        
+    
+    
+            var marker_168bf90c2e984131c01400e2419ec340 = L.marker(
+                [51.5356079, 0.0828687999999999],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_c03d8074a42a4a5cb0bdbab6f3b04d22 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0c074a3d3e091583b8a39b3fc3438ce2 = $(`<div id="html_0c074a3d3e091583b8a39b3fc3438ce2" style="width: 100.0%; height: 100.0%;">Organization: SO HE CARES EDUCATIONAL AND CHILD CARE CIC<br>Category: 2</div>`)[0];
+                popup_c03d8074a42a4a5cb0bdbab6f3b04d22.setContent(html_0c074a3d3e091583b8a39b3fc3438ce2);
+            
+        
+
+        marker_168bf90c2e984131c01400e2419ec340.bindPopup(popup_c03d8074a42a4a5cb0bdbab6f3b04d22)
+        ;
+
+        
+    
+    
+            var marker_923c8d1f7d824ff8b1c183fde19940fa = L.marker(
+                [51.5797871, -0.0346942],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_9005119542a82fada9dad47ad74c0b2b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a94ed224c629c32f64f05956298ed941 = $(`<div id="html_a94ed224c629c32f64f05956298ed941" style="width: 100.0%; height: 100.0%;">Organization: Spark2Life<br>Category: 5</div>`)[0];
+                popup_9005119542a82fada9dad47ad74c0b2b.setContent(html_a94ed224c629c32f64f05956298ed941);
+            
+        
+
+        marker_923c8d1f7d824ff8b1c183fde19940fa.bindPopup(popup_9005119542a82fada9dad47ad74c0b2b)
+        ;
+
+        
+    
+    
+            var marker_cb370ede8d7142d0c1d0ff69d3a26ea6 = L.marker(
+                [51.5711814, 0.1362369],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_83220e368f8fc8c8cc0a63c38236c756 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a1602b9bee2e3dbf64881f9aa3b2dba9 = $(`<div id="html_a1602b9bee2e3dbf64881f9aa3b2dba9" style="width: 100.0%; height: 100.0%;">Organization: Sparkles baby and parent group<br>Category: 5</div>`)[0];
+                popup_83220e368f8fc8c8cc0a63c38236c756.setContent(html_a1602b9bee2e3dbf64881f9aa3b2dba9);
+            
+        
+
+        marker_cb370ede8d7142d0c1d0ff69d3a26ea6.bindPopup(popup_83220e368f8fc8c8cc0a63c38236c756)
+        ;
+
+        
+    
+    
+            var marker_1d162a5451475c788984132add0aad5e = L.marker(
+                [51.5706959, 0.1352407],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_fb77969c91eee0de8fbd2b6a92f7b059 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7a58c2ba5ca4352716fb3d079b1fa3b5 = $(`<div id="html_7a58c2ba5ca4352716fb3d079b1fa3b5" style="width: 100.0%; height: 100.0%;">Organization: St Chad’s Church<br>Category: 5</div>`)[0];
+                popup_fb77969c91eee0de8fbd2b6a92f7b059.setContent(html_7a58c2ba5ca4352716fb3d079b1fa3b5);
+            
+        
+
+        marker_1d162a5451475c788984132add0aad5e.bindPopup(popup_fb77969c91eee0de8fbd2b6a92f7b059)
+        ;
+
+        
+    
+    
+            var marker_543ae0e9d7650513a41fdf5f8ddeec28 = L.marker(
+                [51.55904160000001, 0.1223229],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_a988e7cfd2d282c222b74be6c4c3f733 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_05f1e0747b392f4206c0ab0ed8bb2f91 = $(`<div id="html_05f1e0747b392f4206c0ab0ed8bb2f91" style="width: 100.0%; height: 100.0%;">Organization: St Thomas’s Church<br>Category: 5</div>`)[0];
+                popup_a988e7cfd2d282c222b74be6c4c3f733.setContent(html_05f1e0747b392f4206c0ab0ed8bb2f91);
+            
+        
+
+        marker_543ae0e9d7650513a41fdf5f8ddeec28.bindPopup(popup_a988e7cfd2d282c222b74be6c4c3f733)
+        ;
+
+        
+    
+    
+            var marker_dd8a907bf1978ef32bc99459329d8094 = L.marker(
+                [51.5321055, 0.076246],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_632ffdf56608c5ff8006058be04db202 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f8792590ce300993698a68a767c0c265 = $(`<div id="html_f8792590ce300993698a68a767c0c265" style="width: 100.0%; height: 100.0%;">Organization: StreetSpace<br>Category: 2</div>`)[0];
+                popup_632ffdf56608c5ff8006058be04db202.setContent(html_f8792590ce300993698a68a767c0c265);
+            
+        
+
+        marker_dd8a907bf1978ef32bc99459329d8094.bindPopup(popup_632ffdf56608c5ff8006058be04db202)
+        ;
+
+        
+    
+    
+            var marker_015f720b59f0e67b78fc07c28a0910c1 = L.marker(
+                [51.5385627, 0.1254287],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_33beba8c5156aba8db28056fb3a989fa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6546e0e56280e1a0d71299b348fc4112 = $(`<div id="html_6546e0e56280e1a0d71299b348fc4112" style="width: 100.0%; height: 100.0%;">Organization: Sycamore Trust UK<br>Category: 2</div>`)[0];
+                popup_33beba8c5156aba8db28056fb3a989fa.setContent(html_6546e0e56280e1a0d71299b348fc4112);
+            
+        
+
+        marker_015f720b59f0e67b78fc07c28a0910c1.bindPopup(popup_33beba8c5156aba8db28056fb3a989fa)
+        ;
+
+        
+    
+    
+            var marker_a6c99e56702f01cec1cf0c7b6247dda0 = L.marker(
+                [51.54567858888095, 0.0730359252602443],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_d9eb5c311a9ea14e6d3a4cd48c153926 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6ba065bdad9ba3cac255a4d1f3799f9d = $(`<div id="html_6ba065bdad9ba3cac255a4d1f3799f9d" style="width: 100.0%; height: 100.0%;">Organization: TCL Reuse Centre<br>Category: 5</div>`)[0];
+                popup_d9eb5c311a9ea14e6d3a4cd48c153926.setContent(html_6ba065bdad9ba3cac255a4d1f3799f9d);
+            
+        
+
+        marker_a6c99e56702f01cec1cf0c7b6247dda0.bindPopup(popup_d9eb5c311a9ea14e6d3a4cd48c153926)
+        ;
+
+        
+    
+    
+            var marker_c4b4ba2d84bbdf3a48be0060d530e665 = L.marker(
+                [51.52817083872905, 0.1043520320281295],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_67f0d7d8add854b9d6d34534a8f1077d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c7719272be4dc9bd6bdac6e460de9950 = $(`<div id="html_c7719272be4dc9bd6bdac6e460de9950" style="width: 100.0%; height: 100.0%;">Organization: Thames Community Hub (previously Sue Bramley)<br>Category: 3</div>`)[0];
+                popup_67f0d7d8add854b9d6d34534a8f1077d.setContent(html_c7719272be4dc9bd6bdac6e460de9950);
+            
+        
+
+        marker_c4b4ba2d84bbdf3a48be0060d530e665.bindPopup(popup_67f0d7d8add854b9d6d34534a8f1077d)
+        ;
+
+        
+    
+    
+            var marker_f0954054130ac5ed75b7ab83a524b691 = L.marker(
+                [51.52175709999999, 0.1179494],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_a4c7760a3ddb36c7ae8907441cc6d093 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fa286acf36e6db6e61ca8ca1a929eae1 = $(`<div id="html_fa286acf36e6db6e61ca8ca1a929eae1" style="width: 100.0%; height: 100.0%;">Organization: THAMES LIFE (FORMERLY THAMES WARD COMMUNITY PROJECT)<br>Category: 5</div>`)[0];
+                popup_a4c7760a3ddb36c7ae8907441cc6d093.setContent(html_fa286acf36e6db6e61ca8ca1a929eae1);
+            
+        
+
+        marker_f0954054130ac5ed75b7ab83a524b691.bindPopup(popup_a4c7760a3ddb36c7ae8907441cc6d093)
+        ;
+
+        
+    
+    
+            var marker_aac67d21554332d6cd263df40ec1c816 = L.marker(
+                [51.532442, -0.122204],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_5035d83bd24e579490ebecb99a16a031 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eb8f79a7b982bc60caed0a33c3ecdaac = $(`<div id="html_eb8f79a7b982bc60caed0a33c3ecdaac" style="width: 100.0%; height: 100.0%;">Organization: The Ben Kinsella Trust<br>Category: 2</div>`)[0];
+                popup_5035d83bd24e579490ebecb99a16a031.setContent(html_eb8f79a7b982bc60caed0a33c3ecdaac);
+            
+        
+
+        marker_aac67d21554332d6cd263df40ec1c816.bindPopup(popup_5035d83bd24e579490ebecb99a16a031)
+        ;
+
+        
+    
+    
+            var marker_a93ba5608287ede271c6d2c5b44d2cd2 = L.marker(
+                [51.5318262, 0.0756931],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_a2f0eadc55a6d27bd7d9f1bba7ab8aea = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d73b82bee2e329b89c508a4deb71887c = $(`<div id="html_d73b82bee2e329b89c508a4deb71887c" style="width: 100.0%; height: 100.0%;">Organization: The Boathouse Studios<br>Category: 2</div>`)[0];
+                popup_a2f0eadc55a6d27bd7d9f1bba7ab8aea.setContent(html_d73b82bee2e329b89c508a4deb71887c);
+            
+        
+
+        marker_a93ba5608287ede271c6d2c5b44d2cd2.bindPopup(popup_a2f0eadc55a6d27bd7d9f1bba7ab8aea)
+        ;
+
+        
+    
+    
+            var marker_597f7e2b790b754545f1f7110983ac0f = L.marker(
+                [51.5441855, 0.0775349950310758],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_2e6ada45a87480e2355cc86aa45f5178 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fc7667be8b085c5c70df73d8fc6fda8d = $(`<div id="html_fc7667be8b085c5c70df73d8fc6fda8d" style="width: 100.0%; height: 100.0%;">Organization: The Hive Womens centre<br>Category: 1</div>`)[0];
+                popup_2e6ada45a87480e2355cc86aa45f5178.setContent(html_fc7667be8b085c5c70df73d8fc6fda8d);
+            
+        
+
+        marker_597f7e2b790b754545f1f7110983ac0f.bindPopup(popup_2e6ada45a87480e2355cc86aa45f5178)
+        ;
+
+        
+    
+    
+            var marker_70b43c7d66032a47620830671c5a5d81 = L.marker(
+                [51.5497096, 0.144421],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_eb23e06f67024aacad20f34e60444dab = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_baf3861c4c109d4c33fa9d1b2b3d1ea4 = $(`<div id="html_baf3861c4c109d4c33fa9d1b2b3d1ea4" style="width: 100.0%; height: 100.0%;">Organization: The Osborne Partnership<br>Category: 5</div>`)[0];
+                popup_eb23e06f67024aacad20f34e60444dab.setContent(html_baf3861c4c109d4c33fa9d1b2b3d1ea4);
+            
+        
+
+        marker_70b43c7d66032a47620830671c5a5d81.bindPopup(popup_eb23e06f67024aacad20f34e60444dab)
+        ;
+
+        
+    
+    
+            var marker_71f83ea01676bf7adee566b13f03fd1b = L.marker(
+                [51.5395911, 0.0781584],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_a158a55d9f497633812eeb878691f14e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3cff5b1b5a801b1dac725d96b0fe62e3 = $(`<div id="html_3cff5b1b5a801b1dac725d96b0fe62e3" style="width: 100.0%; height: 100.0%;">Organization: The Pennu Charity<br>Category: 5</div>`)[0];
+                popup_a158a55d9f497633812eeb878691f14e.setContent(html_3cff5b1b5a801b1dac725d96b0fe62e3);
+            
+        
+
+        marker_71f83ea01676bf7adee566b13f03fd1b.bindPopup(popup_a158a55d9f497633812eeb878691f14e)
+        ;
+
+        
+    
+    
+            var marker_b3569d527ca8d99772360c9f086a3c30 = L.marker(
+                [51.53430455, 0.0872536005688973],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_c32e3f70c95563aa23d1a0a21f0a68e3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ca470c16c4e3163626480a2be5ddc671 = $(`<div id="html_ca470c16c4e3163626480a2be5ddc671" style="width: 100.0%; height: 100.0%;">Organization: The Salvation Army<br>Category: 2</div>`)[0];
+                popup_c32e3f70c95563aa23d1a0a21f0a68e3.setContent(html_ca470c16c4e3163626480a2be5ddc671);
+            
+        
+
+        marker_b3569d527ca8d99772360c9f086a3c30.bindPopup(popup_c32e3f70c95563aa23d1a0a21f0a68e3)
+        ;
+
+        
+    
+    
+            var marker_a73947c2b766dd29691f1a411b49e132 = L.marker(
+                [51.5613687, 0.1327969749294168],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_4a432657b7ea82fc5ce182dcf9fdc585 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7ff8b7cac65069b2d525e37525060082 = $(`<div id="html_7ff8b7cac65069b2d525e37525060082" style="width: 100.0%; height: 100.0%;">Organization: The White House<br>Category: 2</div>`)[0];
+                popup_4a432657b7ea82fc5ce182dcf9fdc585.setContent(html_7ff8b7cac65069b2d525e37525060082);
+            
+        
+
+        marker_a73947c2b766dd29691f1a411b49e132.bindPopup(popup_4a432657b7ea82fc5ce182dcf9fdc585)
+        ;
+
+        
+    
+    
+            var marker_14ed39b831ca8aab9f0a6eca88e35cee = L.marker(
+                [51.5345361, 0.1190775],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_3714ceb7605e0662555e6ab03113ce7b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_280054b607991f5f378e02981ee4bcfe = $(`<div id="html_280054b607991f5f378e02981ee4bcfe" style="width: 100.0%; height: 100.0%;">Organization: theSHED at St John’s House<br>Category: 5</div>`)[0];
+                popup_3714ceb7605e0662555e6ab03113ce7b.setContent(html_280054b607991f5f378e02981ee4bcfe);
+            
+        
+
+        marker_14ed39b831ca8aab9f0a6eca88e35cee.bindPopup(popup_3714ceb7605e0662555e6ab03113ce7b)
+        ;
+
+        
+    
+    
+            var marker_dc8b5e4fe8acbbf9bc6f23583bb1cff5 = L.marker(
+                [51.5454452, 0.1132776],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_73188cda7485b726cf1e3f18e45be0cc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0c134ddc03bb56e41caf23fd35a9cc30 = $(`<div id="html_0c134ddc03bb56e41caf23fd35a9cc30" style="width: 100.0%; height: 100.0%;">Organization: TKO Boxing Gym<br>Category: 2</div>`)[0];
+                popup_73188cda7485b726cf1e3f18e45be0cc.setContent(html_0c134ddc03bb56e41caf23fd35a9cc30);
+            
+        
+
+        marker_dc8b5e4fe8acbbf9bc6f23583bb1cff5.bindPopup(popup_73188cda7485b726cf1e3f18e45be0cc)
+        ;
+
+        
+    
+    
+            var marker_8e4a2856b7d3889086daf77f8014b972 = L.marker(
+                [51.5306669, 0.0735728],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_d50fe7815c2437f3a6774f564828364b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2d9d66b4a350ff2c238da1082e3587be = $(`<div id="html_2d9d66b4a350ff2c238da1082e3587be" style="width: 100.0%; height: 100.0%;">Organization: TrailNet<br>Category: 1</div>`)[0];
+                popup_d50fe7815c2437f3a6774f564828364b.setContent(html_2d9d66b4a350ff2c238da1082e3587be);
+            
+        
+
+        marker_8e4a2856b7d3889086daf77f8014b972.bindPopup(popup_d50fe7815c2437f3a6774f564828364b)
+        ;
+
+        
+    
+    
+            var marker_3f5659bd0f4128bbea385f5e2f119e5b = L.marker(
+                [51.5205431, 0.1088060930214723],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_169e6ec88c6867bb86aad4a81e7440d8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_202665528855256e4b9a736cf8fcd430 = $(`<div id="html_202665528855256e4b9a736cf8fcd430" style="width: 100.0%; height: 100.0%;">Organization: Triangoals<br>Category: 1</div>`)[0];
+                popup_169e6ec88c6867bb86aad4a81e7440d8.setContent(html_202665528855256e4b9a736cf8fcd430);
+            
+        
+
+        marker_3f5659bd0f4128bbea385f5e2f119e5b.bindPopup(popup_169e6ec88c6867bb86aad4a81e7440d8)
+        ;
+
+        
+    
+    
+            var marker_8520390fafaeb7892e811a45c3686833 = L.marker(
+                [51.565898, 0.110255],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_114ba6c27789662e23ffff766ac6c57a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e7733d78dc98862b8b62c5cf61c631e5 = $(`<div id="html_e7733d78dc98862b8b62c5cf61c631e5" style="width: 100.0%; height: 100.0%;">Organization: Turn Up Broadcasting<br>Category: 2</div>`)[0];
+                popup_114ba6c27789662e23ffff766ac6c57a.setContent(html_e7733d78dc98862b8b62c5cf61c631e5);
+            
+        
+
+        marker_8520390fafaeb7892e811a45c3686833.bindPopup(popup_114ba6c27789662e23ffff766ac6c57a)
+        ;
+
+        
+    
+    
+            var marker_aea465feca028d75743d29aefba3c083 = L.marker(
+                [51.4976435, -0.1476315],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_05756f3fc236bd44694bf0ea78f13323 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_398bff2142bde253961bbc87c554330a = $(`<div id="html_398bff2142bde253961bbc87c554330a" style="width: 100.0%; height: 100.0%;">Organization: UK Youth<br>Category: 5</div>`)[0];
+                popup_05756f3fc236bd44694bf0ea78f13323.setContent(html_398bff2142bde253961bbc87c554330a);
+            
+        
+
+        marker_aea465feca028d75743d29aefba3c083.bindPopup(popup_05756f3fc236bd44694bf0ea78f13323)
+        ;
+
+        
+    
+    
+            var marker_eb2f0dfc7f10eb51c84b04922753b2d3 = L.marker(
+                [51.54205478868852, 0.0777012522536617],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_5ef5d95c08064bf2bb8875cae780ccd4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_62038a637f4be2fabf07987719dcac5f = $(`<div id="html_62038a637f4be2fabf07987719dcac5f" style="width: 100.0%; height: 100.0%;">Organization: Ukon Careers<br>Category: 1</div>`)[0];
+                popup_5ef5d95c08064bf2bb8875cae780ccd4.setContent(html_62038a637f4be2fabf07987719dcac5f);
+            
+        
+
+        marker_eb2f0dfc7f10eb51c84b04922753b2d3.bindPopup(popup_5ef5d95c08064bf2bb8875cae780ccd4)
+        ;
+
+        
+    
+    
+            var marker_a4dac6f4c49afc7cd5832957b566c535 = L.marker(
+                [51.54039419999999, 0.1484509],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_2b2024e2fa4a2f5aef564302eadcccd8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_52c312a3191a97f22ff1e4a6c30417f4 = $(`<div id="html_52c312a3191a97f22ff1e4a6c30417f4" style="width: 100.0%; height: 100.0%;">Organization: Ultimate Counselling<br>Category: 2</div>`)[0];
+                popup_2b2024e2fa4a2f5aef564302eadcccd8.setContent(html_52c312a3191a97f22ff1e4a6c30417f4);
+            
+        
+
+        marker_a4dac6f4c49afc7cd5832957b566c535.bindPopup(popup_2b2024e2fa4a2f5aef564302eadcccd8)
+        ;
+
+        
+    
+    
+            var marker_8a93b395a9028fefea0d57a377f3136c = L.marker(
+                [51.5581766, 0.1303005],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_52804db3552f1894e02cd3d53955c378 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_db6b0b5005e50f66c05f37a92dc2ec8d = $(`<div id="html_db6b0b5005e50f66c05f37a92dc2ec8d" style="width: 100.0%; height: 100.0%;">Organization: Valence House Museum<br>Category: 2</div>`)[0];
+                popup_52804db3552f1894e02cd3d53955c378.setContent(html_db6b0b5005e50f66c05f37a92dc2ec8d);
+            
+        
+
+        marker_8a93b395a9028fefea0d57a377f3136c.bindPopup(popup_52804db3552f1894e02cd3d53955c378)
+        ;
+
+        
+    
+    
+            var marker_ea5556fdd78500c4656a2f365f1285e2 = L.marker(
+                [51.5565255, 0.1197617509429574],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_f9d2876421db876e799a1f4dc884acef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_17be8a9bb512e699b88ac6a36c273ba6 = $(`<div id="html_17be8a9bb512e699b88ac6a36c273ba6" style="width: 100.0%; height: 100.0%;">Organization: Via – Subwize<br>Category: 2</div>`)[0];
+                popup_f9d2876421db876e799a1f4dc884acef.setContent(html_17be8a9bb512e699b88ac6a36c273ba6);
+            
+        
+
+        marker_ea5556fdd78500c4656a2f365f1285e2.bindPopup(popup_f9d2876421db876e799a1f4dc884acef)
+        ;
+
+        
+    
+    
+            var marker_bc10a23a84580b477285f614c8b3d8d8 = L.marker(
+                [51.596202, 0.1478092],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_f27a022508f3043c53f75fd433efbbce = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_40b74371b88d86230afebae7d44eb48c = $(`<div id="html_40b74371b88d86230afebae7d44eb48c" style="width: 100.0%; height: 100.0%;">Organization: Wellgate Farm<br>Category: 2</div>`)[0];
+                popup_f27a022508f3043c53f75fd433efbbce.setContent(html_40b74371b88d86230afebae7d44eb48c);
+            
+        
+
+        marker_bc10a23a84580b477285f614c8b3d8d8.bindPopup(popup_f27a022508f3043c53f75fd433efbbce)
+        ;
+
+        
+    
+    
+            var marker_d0715e2d8e37afa3f35851cb5dca8359 = L.marker(
+                [51.5384366, 0.1526773],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_7ebc63c87155865ed84db651c3cfe704 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0856fb3e009e50942ba82a582a96a7e6 = $(`<div id="html_0856fb3e009e50942ba82a582a96a7e6" style="width: 100.0%; height: 100.0%;">Organization: William Ford C of E Junior School<br>Category: 1</div>`)[0];
+                popup_7ebc63c87155865ed84db651c3cfe704.setContent(html_0856fb3e009e50942ba82a582a96a7e6);
+            
+        
+
+        marker_d0715e2d8e37afa3f35851cb5dca8359.bindPopup(popup_7ebc63c87155865ed84db651c3cfe704)
+        ;
+
+        
+    
+    
+            var marker_dd8ac7aedf32e5578dc78daa617de8ad = L.marker(
+                [51.5072178, -0.1275862],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_f839cf76d3aacc554939ba2b359fa385 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_85fda49c4dcb40722c60f4ee9f129924 = $(`<div id="html_85fda49c4dcb40722c60f4ee9f129924" style="width: 100.0%; height: 100.0%;">Organization: Womens Trust<br>Category: 2</div>`)[0];
+                popup_f839cf76d3aacc554939ba2b359fa385.setContent(html_85fda49c4dcb40722c60f4ee9f129924);
+            
+        
+
+        marker_dd8ac7aedf32e5578dc78daa617de8ad.bindPopup(popup_f839cf76d3aacc554939ba2b359fa385)
+        ;
+
+        
+    
+    
+            var marker_157a2d93cf0aae7f28fc56d413cb8770 = L.marker(
+                [51.505947, 0.0156917],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_705c65fe91c4837b25d604cfe8395cce = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_081509a887e5cd60077e787fdb19680c = $(`<div id="html_081509a887e5cd60077e787fdb19680c" style="width: 100.0%; height: 100.0%;">Organization: You Press<br>Category: 2</div>`)[0];
+                popup_705c65fe91c4837b25d604cfe8395cce.setContent(html_081509a887e5cd60077e787fdb19680c);
+            
+        
+
+        marker_157a2d93cf0aae7f28fc56d413cb8770.bindPopup(popup_705c65fe91c4837b25d604cfe8395cce)
+        ;
+
+        
+    
+    
+            var marker_6ca5730d660b50764e393a8a012fd5cd = L.marker(
+                [51.5296972, -0.0977626],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_2c01ebbb602e22589f387b4899883f6b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f259aaff3b33cbb6412ce0af1735b593 = $(`<div id="html_f259aaff3b33cbb6412ce0af1735b593" style="width: 100.0%; height: 100.0%;">Organization: Young Elite Management<br>Category: 2</div>`)[0];
+                popup_2c01ebbb602e22589f387b4899883f6b.setContent(html_f259aaff3b33cbb6412ce0af1735b593);
+            
+        
+
+        marker_6ca5730d660b50764e393a8a012fd5cd.bindPopup(popup_2c01ebbb602e22589f387b4899883f6b)
+        ;
+
+        
+    
+    
+            var marker_49622eb8c3335e626eb807991cbce40c = L.marker(
+                [51.5768733, 0.1417523],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_84ccefe035071741a6ee973ce2a845eb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ffd4ec557377626049e27a6466090aa3 = $(`<div id="html_ffd4ec557377626049e27a6466090aa3" style="width: 100.0%; height: 100.0%;">Organization: Young Stars Football<br>Category: 5</div>`)[0];
+                popup_84ccefe035071741a6ee973ce2a845eb.setContent(html_ffd4ec557377626049e27a6466090aa3);
+            
+        
+
+        marker_49622eb8c3335e626eb807991cbce40c.bindPopup(popup_84ccefe035071741a6ee973ce2a845eb)
+        ;
+
+        
+    
+    
+            var marker_ca6924b33770a1beec43789c46ef4300 = L.marker(
+                [51.54074395, 0.1488416],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_f28319b10b710dd1f64039f1c2bc64ec = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_618ca713deaa1720e1f843eff43e1fb7 = $(`<div id="html_618ca713deaa1720e1f843eff43e1fb7" style="width: 100.0%; height: 100.0%;">Organization: Youth League<br>Category: 2</div>`)[0];
+                popup_f28319b10b710dd1f64039f1c2bc64ec.setContent(html_618ca713deaa1720e1f843eff43e1fb7);
+            
+        
+
+        marker_ca6924b33770a1beec43789c46ef4300.bindPopup(popup_f28319b10b710dd1f64039f1c2bc64ec)
+        ;
+
+        
+    
+    
+            var marker_3448229779a57e8edcfa1ac9a7181245 = L.marker(
+                [51.52907307463173, -0.0949374363338055],
+                {}
+            ).addTo(map_02a54c0fd48a07c727f99c7e41dd3bf6);
+        
+    
+        var popup_cdb7f24397b3c40ede968ce2c3745605 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5074bbbe703087466c11df901836372f = $(`<div id="html_5074bbbe703087466c11df901836372f" style="width: 100.0%; height: 100.0%;">Organization: Youth Unity CIC<br>Category: 2</div>`)[0];
+                popup_cdb7f24397b3c40ede968ce2c3745605.setContent(html_5074bbbe703087466c11df901836372f);
+            
+        
+
+        marker_3448229779a57e8edcfa1ac9a7181245.bindPopup(popup_cdb7f24397b3c40ede968ce2c3745605)
+        ;
+
+        
+    
+    
+            map_02a54c0fd48a07c727f99c7e41dd3bf6.fitBounds(
+                [[51.4899096, -0.156883], [51.7476326, 0.5097484999999999]],
+                {}
+            );
+        
+</script>
+</html>
