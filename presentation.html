@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,12 +18,6 @@
         }
     </style>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-
-    <!-- Map state listener script -->
-    <script>
-        let mapState = null; // Global variable to hold the map state
-
-    </script>
 </head>
 <body>
     <div class="reveal">
@@ -43,22 +36,26 @@
         </div>
     </div>
 
-    <!-- Network visualization script -->
     <script>
-        // Wait for the map state to be available
-        async function waitForMapState() {
-            return new Promise(resolve => {
-                let interval = setInterval(() => {
-                    if (typeof getMapState === "function") {
-                        const mapState = getMapState();
-                        if (mapState && mapState.zoom) {
-                            clearInterval(interval);
-                            resolve(mapState);
-                        }
+        let mapState = null; // Global variable to hold the map state
+
+        // Wait for map state from map.html
+        function waitForMapState() {
+            return new Promise((resolve) => {
+                // Listen for messages from iframe
+                window.addEventListener("message", function messageListener(event) {
+                    if (event.data && event.data.type === "MAP_STATE") {
+                        mapState = event.data.state;
+                        console.log("Received map state from iframe:", mapState);
+
+                        // Remove the listener after receiving the state
+                        window.removeEventListener("message", messageListener);
+                        resolve(mapState);
                     }
-                }, 100); // Poll every 100ms
+                });
             });
         }
+
         // Function to transform latitude/longitude to screen coordinates
         function latLonToScreen(lat, lon, mapState) {
             const mapWidth = 800;  // Map container width
@@ -90,17 +87,16 @@
                 };
             });
 
-
             // Draw links
             const link = svg.append("g")
                 .selectAll("line")
                 .data(data.links)
                 .enter()
                 .append("line")
-                .attr("x1", d => data.nodes.find(n => n.id === d.source).x)
-                .attr("y1", d => data.nodes.find(n => n.id === d.source).y)
-                .attr("x2", d => data.nodes.find(n => n.id === d.target).x)
-                .attr("y2", d => data.nodes.find(n => n.id === d.target).y)
+                .attr("x1", d => transformedNodes.find(n => n.id === d.source).x)
+                .attr("y1", d => transformedNodes.find(n => n.id === d.source).y)
+                .attr("x2", d => transformedNodes.find(n => n.id === d.target).x)
+                .attr("y2", d => transformedNodes.find(n => n.id === d.target).y)
                 .attr("stroke", "#999")
                 .attr("stroke-opacity", 0.6);
 
@@ -116,7 +112,7 @@
                 .attr("fill", d => d3.schemeCategory10[d.cluster]);
 
             // Animation: Transition to clustered layout
-            const simulation = d3.forceSimulation(data.nodes)
+            const simulation = d3.forceSimulation(transformedNodes)
                 .force("link", d3.forceLink(data.links).id(d => d.id).distance(100))
                 .force("charge", d3.forceManyBody().strength(-100))
                 .force("center", d3.forceCenter(width / 2, height / 2))
@@ -139,77 +135,36 @@
             }, 3000);
         }
 
-        function waitForMapState() {
-            return new Promise((resolve, reject) => {
-                // Add event listener for message from iframe
-                window.addEventListener("message", function messageListener(event) {
-                    // Check if the message contains the map state
-                    if (event.data && event.data.type === "MAP_STATE") {
-                        mapState = event.data.state;
-                        console.log("Received map state from iframe:", mapState);
+        // Fetch and process network data when the slide changes
+        Reveal.on('slidechanged', function (event) {
+            const currentSlide = event.currentSlide;
 
-                        // Remove the listener after receiving the state
-                        window.removeEventListener("message", messageListener);
-                        resolve(mapState);
-                    }
-                });
+            // Check if the current slide is the network visualization slide
+            if (currentSlide.querySelector("#network-container")) {
+                console.log("Network visualization slide active.");
 
-        // Function to get the map state
-        function getMapState() {
-            if (mapState) {
-                return mapState;
-            } else {
-                console.error("Map state not yet received from iframe.");
-                return null;
-            }
-        }
-
-        // Fetch and process network data
-        waitForMapState()
-            .then((mapState) => {
-                console.log("Successfully received map state:", mapState);
-
-      // Fetch and process network data when the slide changes
-      Reveal.on('slidechanged', function (event) {
-          const currentSlide = event.currentSlide;
-
-          // Check if the current slide is the network visualization slide
-          if (currentSlide.querySelector("#network-container")) {
-              console.log("Network visualization slide active.");
-
-              // Ensure mapState is available
-              if (!mapState) {
-                  console.error("Map state is not available. Waiting for map.html to send it.");
-                  return;
-              }
-    
-                // Proceed with using mapState
-                fetch("network_data.json")
-                    .then(response => response.json())
-                    .then(data => {
-                        const networkData = {
-                            nodes: data.nodes.map(node => {
-                                const screenPos = latLonToScreen(node.lat, node.lon, mapState);
-                                return {
-                                    id: node.id,
-                                    cluster: node.cluster,
-                                    x: screenPos.x,
-                                    y: screenPos.y
-                                };
-                            }),
-                            links: data.links
-                        };
-                        drawNetwork(networkData);
+                waitForMapState()
+                    .then(() => {
+                        fetch("network_data.json")
+                            .then(response => response.json())
+                            .then(data => {
+                                drawNetwork({
+                                    nodes: data.nodes.map(node => ({
+                                        ...node,
+                                        x: latLonToScreen(node.lat, node.lon, mapState).x,
+                                        y: latLonToScreen(node.lat, node.lon, mapState).y
+                                    })),
+                                    links: data.links
+                                });
+                            })
+                            .catch(error => console.error("Error loading network data:", error));
                     })
-                    .catch(error => console.error("Error loading network data:", error));
-              })
-              .catch((error) => {
-                  console.error(error.message);
-            });
+                    .catch(error => console.error("Error waiting for map state:", error));
+            }
+        });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
     <script>Reveal.initialize();</script>
 </body>
 </html>
-
