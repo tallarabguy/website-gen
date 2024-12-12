@@ -26,7 +26,7 @@
             <!-- Slide 1: Map -->
             <section>
                 <h2>Mapping Community Groups</h2>
-                <iframe src="map.html" width="800" height="500" style="border:none;" id="folium-map"></iframe>
+                <iframe src="map.html" id="folium-map" width="800" height="500" style="border:none;"></iframe>
             </section>
 
 
@@ -40,11 +40,14 @@
 
     <script>
         
-        // Wait for the iframe to load and then fetch the map state
         document.getElementById('folium-map').addEventListener('load', function () {
             try {
-                const mapState = window.parent.getMapState();
-                console.log('Map state:', mapState);
+                if (typeof window.parent.getMapState === "function") {
+                    const mapState = window.parent.getMapState();
+                    console.log('Map state:', mapState);
+                } else {
+                    console.error('getMapState is not defined in map.html.');
+                }
             } catch (error) {
                 console.error('Error fetching map state:', error);
             }
