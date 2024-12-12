@@ -45,6 +45,20 @@
 
     <!-- Network visualization script -->
     <script>
+        // Wait for the map state to be available
+        async function waitForMapState() {
+            return new Promise(resolve => {
+                let interval = setInterval(() => {
+                    if (typeof getMapState === "function") {
+                        const mapState = getMapState();
+                        if (mapState && mapState.zoom) {
+                            clearInterval(interval);
+                            resolve(mapState);
+                        }
+                    }
+                }, 100); // Poll every 100ms
+            });
+        }
         // Function to transform latitude/longitude to screen coordinates
         function latLonToScreen(lat, lon, mapState) {
             const mapWidth = 800;  // Map container width
@@ -66,6 +80,17 @@
                 .attr("width", width)
                 .attr("height", height);
 
+            // Transform lat/lon to screen positions for nodes
+            const transformedNodes = data.nodes.map(node => {
+                const screenPos = latLonToScreen(node.lat, node.lon, mapState);
+                return {
+                    ...node,
+                    x: screenPos.x,
+                    y: screenPos.y
+                };
+            });
+
+
             // Draw links
             const link = svg.append("g")
                 .selectAll("line")
@@ -82,7 +107,7 @@
             // Draw nodes
             const node = svg.append("g")
                 .selectAll("circle")
-                .data(data.nodes)
+                .data(transformedNodes)
                 .enter()
                 .append("circle")
                 .attr("cx", d => d.x)
@@ -138,7 +163,7 @@
                 return null;
             }
         }
-        
+
         // Fetch and process network data
         waitForMapState()
             .then((mapState) => {
