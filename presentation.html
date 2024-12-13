@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">    
     <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             Reveal.initialize();
@@ -53,6 +55,12 @@
             background-color: #1E3A5F;
             color: #FFFFFF;
             font-family: 'Poppins', Arial, sans-serif;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
         }
         h2 {
             font-weight: 600;
@@ -104,8 +112,16 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
+    <img src="IG_12_2.jpg" class="logo" alt="Logo">
     <div class="reveal">
         <div class="slides">
+            <!-- Title Slide -->
+            <section>
+                <h1>Community Intelligence - IG12</h1>
+                <h2>Innovating for Our Boroughs</h2>
+                <p>Explore the richness of our community data</p>
+            </section>
+
             <!-- Slide 1: Map -->
             <section>
                 <h2>Mapping Community Groups</h2>
