@@ -79,10 +79,13 @@
             <!-- Slide 3: Search Borough Data -->
             <section>
                 <h2>Search Borough Data</h2>
-                <input type="text" id="borough-search" placeholder="Enter borough name" style="margin-bottom: 10px; padding: 5px; font-size: 16px;">
-                <button id="search-button" style="padding: 5px 10px; font-size: 16px;">Search</button>
-                <div id="results-container"></div>
-                <p id="results-count" style="margin-top: 10px; font-weight: bold;"></p>
+                <div>
+                    <input type="text" id="search-input" placeholder="Enter borough name..." style="padding: 5px; width: 300px;">
+                    <button id="search-button" style="padding: 5px 10px;">Search</button>
+                </div>
+                <div id="results-container">
+                    <!-- Results will be displayed here -->
+                </div>
             </section>
         </div>
     </div>
@@ -90,51 +93,54 @@
     <script>
         let mapState = null; // Global variable to hold the map state
 
-        document.addEventListener("DOMContentLoaded", () => {
-            Reveal.initialize();
+        d3.csv("all_layers_properties.csv").then(data => {
+            console.log("Data loaded:", data);
+
+            const searchInput = document.getElementById("search-input");
+            const searchButton = document.getElementById("search-button");
+            const resultsContainer = document.getElementById("results-container");
+
+            // Function to display search results
+            function displayResults(filteredData) {
+                resultsContainer.innerHTML = ""; // Clear previous results
+
+                if (filteredData.length === 0) {
+                    resultsContainer.innerHTML = "<p>No results found.</p>";
+                    return;
+                }
+
+                const totalEntries = document.createElement("p");
+                totalEntries.textContent = `Total entries found: ${filteredData.length}`;
+                resultsContainer.appendChild(totalEntries);
+
+                const list = document.createElement("ul");
+                filteredData.forEach(entry => {
+                    const listItem = document.createElement("li");
+                    listItem.innerHTML = `
+                        <strong>Name:</strong> ${entry.name || "N/A"}<br>
+                        <strong>Address 1:</strong> ${entry.address1 || "N/A"}<br>
+                        <strong>Address 2:</strong> ${entry.address2 || "N/A"}<br>
+                        <strong>Address 3:</strong> ${entry.address3 || "N/A"}
+                    `;
+                    list.appendChild(listItem);
+                });
+                resultsContainer.appendChild(list);
+            }
 
             // Add event listener to the search button
-            document.getElementById("search-button").addEventListener("click", () => {
-                const searchInput = document.getElementById("borough-search").value.trim().toLowerCase();
-                const resultsContainer = document.getElementById("results-container");
-                const resultsCount = document.getElementById("results-count");
+            searchButton.addEventListener("click", () => {
+                const query = searchInput.value.trim().toLowerCase();
+                if (!query) {
+                    resultsContainer.innerHTML = "<p>Please enter a borough name to search.</p>";
+                    return;
+                }
 
-                // Fetch the JSON data
-                fetch("borough_centric_data.json")
-                    .then(response => response.json())
-                    .then(data => {
-                        // Clear previous results
-                        resultsContainer.innerHTML = "";
-                        resultsCount.textContent = "";
-
-                        // Filter data by borough name
-                        const filteredData = data.filter(entry => entry.borough.toLowerCase() === searchInput);
-
-                        if (filteredData.length > 0) {
-                            // Display results
-                            filteredData.forEach(item => {
-                                const resultItem = document.createElement("div");
-                                resultItem.className = "result-item";
-                                resultItem.innerHTML = `
-                                    <strong>Name:</strong> ${item.name || "N/A"}<br>
-                                    <strong>Address 1:</strong> ${item.address1 || "N/A"}<br>
-                                    <strong>Address 2:</strong> ${item.address2 || "N/A"}<br>
-                                    <strong>Address 3:</strong> ${item.address3 || "N/A"}
-                                `;
-                                resultsContainer.appendChild(resultItem);
-                            });
-
-                            // Show the count of results
-                            resultsCount.textContent = `Total entries found: ${filteredData.length}`;
-                        } else {
-                            resultsCount.textContent = "No entries found.";
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Error fetching borough data:", error);
-                        resultsCount.textContent = "An error occurred while searching.";
-                    });
+                // Filter data based on borough_name
+                const filteredData = data.filter(entry => entry.borough_name.toLowerCase() === query);
+                displayResults(filteredData);
             });
+        }).catch(error => {
+            console.error("Error loading CSV data:", error);
         });
 
         // Wait for map state from map.html
